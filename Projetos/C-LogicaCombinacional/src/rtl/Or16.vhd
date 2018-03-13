@@ -8,6 +8,7 @@ entity Or16 is
 			q:   out STD_LOGIC_VECTOR(15 downto 0));
 end entity;
 
+architecture func of Or16 is 
 begin
 q <= a or b;
 end func;
