@@ -8,3 +8,10 @@ entity BarrelShifter16 is
 			size: in  STD_LOGIC_VECTOR(2 downto 0);    -- shift amount
 			q:    out STD_LOGIC_VECTOR(15 downto 0));  -- output vector (shifted)
 end entity;
+
+	architecture rtl of BarrelShifter16 is
+	q <= std_logic_vector(unsigned(a) rol to_integer(unsigned(size))) when (dir = '0') else
+	     std_logic_vector(unsigned(a) ror to_integer(unsigned(size)));
+	
+	
+end rtl;
