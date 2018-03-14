@@ -16,19 +16,18 @@ entity DMux8Way is
 end entity;
 
 architecture rtl of DMux8Way is
-signal sel0, sel1, sel2: STD_LOGIC;
+signal sel_1_0, sel_1_1, sel_1_2: STD_LOGIC;
 begin
-	sel0 <= not sel(0);
-	sel1 <= not sel(1);
-	sel2 <= not sel(2);
+	sel_1_0 <= not sel(0);
+	sel_1_1 <= not sel(1);
+	sel_1_2 <= not sel(2);
 
-	q0 <= a and sel0 and sel1;
-	q1 <= a and sel(0) and sel1;
-	q2 <= a and sel0 and sel(1);
-	q3 <= a and sel(0) and sel(1);
-
-	q4 <= a and sel2 and sel1;
-	q5 <= a and sel(2) and sel1;
-	q6 <= a and sel2 and sel(1);
-	q7 <= a and sel(2) and sel(1);
+	q0 <= a and sel_1_0 and sel_1_1 and sel_1_2;
+	q1 <= a  and sel_1_0 and sel_1_1 and sel(2);
+	q2 <= a and sel_1_0 and sel(1) and sel_1_2;
+	q3 <= a and sel_1_0 and sel(1) and sel(2);
+	q4 <= a and sel(0) and sel_1_1 and sel_1_2;
+	q5 <= a and sel(0) and sel_1_1 and sel(2);
+	q6 <= a and sel(0) and sel(1) and sel_1_2;
+	q7 <= a and sel(0) and sel(1) and sel(2);
 end rtl;
