@@ -13,3 +13,17 @@ entity Nor8Way is
 			h:   in  STD_LOGIC;
 			q:   out STD_LOGIC);
 end entity;
+
+architecture rtl of Nor8Way is
+begin 
+
+	process(a, b, c, d, e, f, g, h)
+		begin		
+			if (a='0' and b='0' and c='0' and d='0' and e='0' and f='0' and g='0' and h='0') then
+				q <= '1';
+			else then
+				q <= '0';
+			end if;
+    end process;
+
+end rtl;
