@@ -13,12 +13,12 @@ end entity;
 
 architecture rtl of DMux4Way is
 
-signal sel0_linha, sel1_linha: STD_LOGIC;
+signal sel_1v0, sel_1v1: STD_LOGIC;
 begin
-	sel_0 <= not sel(0);
-	sel_1 <= not sel(1);
-	q0 <= a and sel_0 and sel_1;
-	q1 <= a and sel(0) and sel_1;
-	q2 <= a and sel_0 and sel(1);
+	sel_1v0 <= not sel(0);
+	sel_1v1 <= not sel(1);
+	q0 <= a and sel_1v0 and sel_1v1;
+	q1 <= a and sel(0) and sel_1v1;
+	q2 <= a and sel_1v0 and sel(1);
 	q3 <= a and sel(0) and sel(1);
 end rtl;
