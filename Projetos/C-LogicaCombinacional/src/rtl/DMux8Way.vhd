@@ -14,3 +14,88 @@ entity DMux8Way is
 			q6:  out STD_LOGIC;
 			q7:  out STD_LOGIC);
 end entity;
+
+architecture rtl of Dmux8Way is
+begin
+	process (a, sel)
+		begin
+		if (sel = "000") then
+			q2 <= '0';  
+			q1 <= '0';
+			q0 <= a;
+			q3 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+		elsif (sel = "001") then
+			q2 <= '0';  
+			q0 <= '0';
+			q1 <= a;
+			q3 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+		elsif (sel = "010") then
+			q0 <= '0';  
+			q1 <= '0';
+			q2 <= a;
+			q3 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+
+		elsif (sel = "011") then
+			q2 <= '0';  
+			q1 <= '0';
+			q3 <= a;
+			q0 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+
+		elsif (sel = "100") then
+			q2 <= '0';  
+			q1 <= '0';
+			q4 <= a;
+			q0 <= '0';
+			q3 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+
+		elsif (sel = "101") then
+			q2 <= '0';  
+			q1 <= '0';
+			q5 <= a;
+			q0 <= '0';
+			q4 <= '0';  
+			q3 <= '0';
+			q6 <= '0';
+			q7 <= '0';
+
+		elsif (sel = "110") then
+			q2 <= '0';  
+			q1 <= '0';
+			q6 <= a;
+			q0 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q3 <= '0';
+			q7 <= '0';
+
+		else
+			q2 <= '0';  
+			q1 <= '0';
+			q7 <= a;
+			q0 <= '0';
+			q4 <= '0';  
+			q5 <= '0';
+			q6 <= '0';
+			q3 <= '0';
+		end if;
+		end process;
+		end rtl;
