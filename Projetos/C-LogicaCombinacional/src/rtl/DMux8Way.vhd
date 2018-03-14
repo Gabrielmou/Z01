@@ -3,31 +3,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DMux8Way is
 	port ( 
-			a:   in  STD_LOGIC;
-			sel: in  STD_LOGIC_VECTOR(2 downto 0);
-			q0:  out STD_LOGIC;
-			q1:  out STD_LOGIC;
-			q2:  out STD_LOGIC;
-			q3:  out STD_LOGIC;
-			q4:  out STD_LOGIC;
-			q5:  out STD_LOGIC;
-			q6:  out STD_LOGIC;
-			q7:  out STD_LOGIC);
+        din : in STD_LOGIC;
+        sel : in STD_LOGIC_VECTOR(2 downto 0);
+        dout : out STD_LOGIC_VECTOR(7 downto 0)
 end entity;
 
 architecture rtl of DMux8Way is
-signal sel_1_0, sel_1_1, sel_1_2: STD_LOGIC;
 begin
-	sel_1_0 <= not sel(0);
-	sel_1_1 <= not sel(1);
-	sel_1_2 <= not sel(2);
-
-	q0 <= a and sel_1_0 and sel_1_1 and sel_1_2;
-	q1 <= a  and sel_1_0 and sel_1_1 and sel(2);
-	q2 <= a and sel_1_0 and sel(1) and sel_1_2;
-	q3 <= a and sel_1_0 and sel(1) and sel(2);
-	q4 <= a and sel(0) and sel_1_1 and sel_1_2;
-	q5 <= a and sel(0) and sel_1_1 and sel(2);
-	q6 <= a and sel(0) and sel(1) and sel_1_2;
-	q7 <= a and sel(0) and sel(1) and sel(2);
+    dout <= (din & "0000000") when (sel="000") else
+            ('0' & din & "000000") when (sel="001") else
+            ("00" & din & "00000") when (sel="010") else
+            ("000" & din & "0000") when (sel="011") else
+            ("0000" & din & "000") when (sel="100") else
+            ("00000" & din & "00") when (sel="101") else
+            ("000000" & din & '0') when (sel="110") else
+            ("0000000" & din) ;
 end rtl;

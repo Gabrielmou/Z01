@@ -38,6 +38,6 @@ begin
 		else
 			q <= h;
 
-	end if;
+		end if;
 	end process;
 end rtl;
