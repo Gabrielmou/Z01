@@ -10,3 +10,15 @@ entity DMux4Way is
 			q2:  out STD_LOGIC;
 			q3:  out STD_LOGIC);
 end entity;
+
+architecture rtl of DMux4Way is
+
+signal sel_1v0, sel_1v1: STD_LOGIC;
+begin
+	sel_1v0 <= not sel(0);
+	sel_1v1 <= not sel(1);
+	q0 <= a and sel_1v0 and sel_1v1;
+	q1 <= a and sel(0) and sel_1v1;
+	q2 <= a and sel_1v0 and sel(1);
+	q3 <= a and sel(0) and sel(1);
+end rtl;
