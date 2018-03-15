@@ -16,5 +16,7 @@ begin
 	q <= std_logic_vector(unsigned(a) rol to_integer(unsigned(size))) when (dir = '0') else
 	     std_logic_vector(unsigned(a) ror to_integer(unsigned(size)));
 	
-	
+
 end rtl;
+
+
