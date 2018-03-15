@@ -21,7 +21,7 @@ begin
 		begin		
 			if (a='0' and b='0' and c='0' and d='0' and e='0' and f='0' and g='0' and h='0') then
 				q <= '1';
-			else then
+			else
 				q <= '0';
 			end if;
     end process;
