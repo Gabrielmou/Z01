@@ -1,22 +1,22 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity DMux2Way is
+entity Mux2Way is
 	port ( 
 			a:   in  STD_LOGIC;
+			b:   in  STD_LOGIC;
 			sel: in  STD_LOGIC;
-			q0:  out STD_LOGIC;
-			q1:  out STD_LOGIC);
+			q:   out STD_LOGIC);
 end entity;
 
-architecture rtl of DMux2Way is
+architecture rtl of Mux2Way is
 begin 
-	process (sel, a)
+	process (sel, a, b)
 	begin
 		if (sel = '0') then
-			q0 <= a;
+			q <= a;
 		else
-			q1 <= a;
+			q <= b;
 		end if;
 	end process;
 
