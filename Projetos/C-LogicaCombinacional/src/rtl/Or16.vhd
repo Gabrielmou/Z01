@@ -9,10 +9,6 @@ entity Or16 is
 end entity;
 
 architecture rtl of Or16 is 
-  
-begin 
-q <= a or b; 
-end rtl; 
 
 begin
 q <= a or b;
