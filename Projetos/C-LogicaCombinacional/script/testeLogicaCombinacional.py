@@ -43,10 +43,10 @@ class tstLogiComb(object):
     def print(self):
         logLogiComb("---------- Portas Logicas            ")
         logLogiComb("---------- 03-Logica Combinacional   ")
-
+        
 if __name__ == "__main__":
     tstLogiComb = tstLogiComb()
-    tstLogiComb.print();
+    tstLogiComb.print()
     tstLogiComb.add(tstLogiComb.work)
     tstLogiComb.work.run()
 
