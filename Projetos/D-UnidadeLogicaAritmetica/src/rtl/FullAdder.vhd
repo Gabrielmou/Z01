@@ -15,7 +15,8 @@ entity FullAdder is
 end entity;
 
 architecture rtl of FullAdder is
-
+ soma <= a XOR b XOR c ;
+ vaium <= (a AND b) OR (c AND a) OR (c AND b) ;
 begin
 
 end architecture;
