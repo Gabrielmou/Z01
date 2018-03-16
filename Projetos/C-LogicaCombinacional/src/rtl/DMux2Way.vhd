@@ -7,7 +7,6 @@ entity DMux2Way is
 			sel: in  STD_LOGIC;
 			q0:  out STD_LOGIC;
 			q1:  out STD_LOGIC);
-<<<<<<< HEAD
 end entity;
 
 architecture rtl of DMux2Way is
@@ -15,6 +14,3 @@ begin
 	q0 <= a and not(sel);
 	q1 <= a and sel;
 end rtl;
-=======
-end entity
->>>>>>> upstream/master
