@@ -107,8 +107,8 @@ begin
 
 	inversor : inversor16 port map(no, mux_out, precomp);
 
+	calculo_comparador : comparador16 port map(precomp,zr,ng);
 
+	saida <= precomp;
 
-
-
-end architecture;
+	end architecture;
