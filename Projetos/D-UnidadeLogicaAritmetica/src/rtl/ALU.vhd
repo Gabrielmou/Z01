@@ -103,7 +103,7 @@ begin
 	calculo_adder : Add16 port map(nx_out, ny_out, adder_out);
 	calculo_and : And16 port map(nx_out, ny_out, and_out);
 
-	calculo_mux : Mux16 port map(and_out,adder_out,mux_out);
+	calculo_mux : Mux16 port map(and_out,adder_out,f,mux_out);
 
 	inversor : inversor16 port map(no, mux_out, precomp);
 
