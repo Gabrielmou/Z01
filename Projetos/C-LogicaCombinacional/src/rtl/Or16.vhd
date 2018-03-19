@@ -14,7 +14,4 @@ begin
 q <= a or b; 
 end rtl; 
 
-begin
-q <= a or b;
-end rtl;
 
