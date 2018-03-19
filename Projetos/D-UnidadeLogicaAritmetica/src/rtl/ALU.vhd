@@ -90,8 +90,23 @@ architecture  rtl OF alu IS
 		);
 	end component;
 
-   SIGNAL zxout,zyout,nxout,nyout,andout,adderout,muxout,precomp: std_logic_vector(15 downto 0);
+   SIGNAL zx_out,zy_out,nx_out,ny_out,and_out,adder_out,mux_out,precomp: std_logic_vector(15 downto 0);
 
 begin
+
+	calculo_zerador_X : zerador16 port map(zx,x,zx_out);
+	connect_zerador_inversor_X : inversor16 port map(nx,zx_out,ny_out);
+
+	calculo_zerador_Y : zerador16 port map(zy,y,zy_out);
+	conect_zerador_inversor_Y : inversor16 port map(ny,zy_out,ny_out);
+
+
+
+
+
+
+
+
+
 
 end architecture;
