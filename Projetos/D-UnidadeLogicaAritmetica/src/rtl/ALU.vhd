@@ -100,10 +100,12 @@ begin
 	calculo_zerador_Y : zerador16 port map(zy,y,zy_out);
 	conect_zerador_inversor_Y : inversor16 port map(ny,zy_out,ny_out);
 
+	calculo_adder : Add16 port map(nx_out, ny_out, adder_out);
+	calculo_and : And16 port map(nx_out, ny_out, and_out);
 
+	calculo_mux : Mux16 port map(and_out,adder_out,mux_out);
 
-
-
+	inversor : inversor16 port map(no, mux_out, precomp);
 
 
 
