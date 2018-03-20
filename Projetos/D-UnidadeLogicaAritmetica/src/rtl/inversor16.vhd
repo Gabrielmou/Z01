@@ -14,6 +14,12 @@ end entity;
 
 architecture rtl of inversor16 is
 
+signal b : STD_LOGIC_VECTOR(15 downto 0);
+
 begin
+
+b <= (others => '1') when z = '1' else (others => '0');
+
+y <= b xor a;
 
 end architecture;
