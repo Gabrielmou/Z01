@@ -95,7 +95,7 @@ architecture  rtl OF alu IS
 begin
 
 	calculo_zerador_X : zerador16 port map(zx,x,zx_out);
-	connect_zerador_inversor_X : inversor16 port map(nx,zx_out,ny_out);
+	connect_zerador_inversor_X : inversor16 port map(nx,zx_out,nx_out);
 
 	calculo_zerador_Y : zerador16 port map(zy,y,zy_out);
 	conect_zerador_inversor_Y : inversor16 port map(ny,zy_out,ny_out);
