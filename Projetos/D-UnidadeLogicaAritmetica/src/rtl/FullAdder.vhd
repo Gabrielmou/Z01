@@ -18,4 +18,7 @@ architecture rtl of FullAdder is
 
 begin
 
+ soma <= a XOR b XOR c ;  -- 
+ vaium <= (a AND b) OR (c AND a) OR (c AND b) ;  -- 
+
 end architecture;
