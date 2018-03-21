@@ -14,6 +14,7 @@ end entity;
 
 architecture rtl of inversor16 is
 
+
 begin
 
 end architecture;

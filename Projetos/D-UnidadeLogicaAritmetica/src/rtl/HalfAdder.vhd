@@ -17,5 +17,9 @@ end entity;
 architecture rtl of HalfAdder is
 
 begin
+--Para entender a lógica ver a seguinte imagem:
+-- https://commons.wikimedia.org/wiki/File:Half_Adder.svg
+	soma <= a xor b;
+	vaium <= a and b;
 
 end architecture;
