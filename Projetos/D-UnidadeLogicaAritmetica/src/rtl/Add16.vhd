@@ -27,11 +27,13 @@ component FullAdder is
 	);
 end component;
 
+-- Guarda o carry
+
 signal s : STD_LOGIC_VECTOR(15 downto 0);
 
 begin
 
--- Soma , para cada bit, um ao outro e guarda o resultado e o carry para o bit seguinte.
+-- Soma , para cada bit, um ao outro e guarda o resultado e o carry(para o bit seguinte).
 
 s1 : FullAdder port map(
 		a     => a(0),
