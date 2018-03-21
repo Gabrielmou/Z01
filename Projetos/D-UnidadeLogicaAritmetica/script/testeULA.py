@@ -14,7 +14,7 @@ import os
 import shutil
 
 # para printf coloridos
-# from termcolor import colored
+from termcolor import colored
 
 # Scripts python
 TOOLSPATH = os.path.dirname(os.path.abspath(__file__))+"/../../tools/"
