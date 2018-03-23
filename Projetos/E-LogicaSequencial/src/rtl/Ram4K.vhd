@@ -14,3 +14,21 @@ entity Ram4K is
 		output:  out STD_LOGIC_VECTOR(15 downto 0)
 	);
 end entity;
+
+architecture rtl of Ram4k is 
+	type memory is array(0 to 4095) of STD_LOGIC_VECTOR(15 downto 0)/
+	signal ram_signal:memory;
+
+
+begin 
+
+	process(clock)
+	begin
+		if(clock'event and clock = '1' and load = '1') then
+			ram_signal(to_integer(unsigned(adress))) <=input;
+		end if;
+	end process;
+
+	output <= ram_signal(to_integer(unsigned(adress)));
+
+end rtl;
