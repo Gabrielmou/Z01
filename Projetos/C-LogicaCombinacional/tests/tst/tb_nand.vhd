@@ -15,7 +15,7 @@ end entity;
 
 architecture tb of tb_nand is
 
-  component nand_vhdl is
+  component nand_z01 is
     port(a:in  STD_LOGIC;
          b:in  STD_LOGIC;
          q:out STD_LOGIC
@@ -24,24 +24,9 @@ architecture tb of tb_nand is
 
   signal  inA, inB, outQ : STD_LOGIC;
 
-  -- Clock
-  constant CLK_PERIOD : time := 1 ns;
-  signal clk : STD_LOGIC := '0';
-
 begin
 
-<<<<<<< HEAD
-  clk_process :process
-  begin
-    clk <= '0';
-    wait for clk_period/2;  --for 0.5 ns signal is '0'.
-    clk <= '1';
-    wait for clk_period/2;  --for next 0.5 ns signal is '1'.
-  end process;
-
-=======
->>>>>>> upstream/master
-  mapping: nand_vhdl port map(inA, inB, outQ);
+  mapping: nand_z01 port map(inA, inB, outQ);
 
   main : process
   begin
