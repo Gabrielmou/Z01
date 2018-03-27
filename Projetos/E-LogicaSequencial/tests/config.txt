@@ -11,3 +11,4 @@ FlipFlopD.vhd
 #Ram64.vhd
 #Ram512.vhd
 #Ram4K.vhd
+PC.vhd
