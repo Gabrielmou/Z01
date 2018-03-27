@@ -24,20 +24,20 @@ architecture rtl of Register16 is
 		output: out STD_LOGIC_VECTOR(7 downto 0));
 	end component;
 
-begin
+SIGNAL ax_out: std_logic_vector(15 downto 0);
 
+begin
 	A0: Register8 port map( --Bit mais da esquerda
 		clock => clock,
-		input => input(0),
+		input => input(7 downto 0),
 		load => load,
-		output => output(0)
+		output => output(7 downto 0)
 	);
-
-	A1: Register8 port map( --Bit mais da direita
+	A1: Register8 port map( --Bit mais da esquerda
 		clock => clock,
-		input => input(1),
+		input => input(15 downto 8),
 		load => load,
-		output => output(1)
+		output => output(15 downto 8)
 	);
-
 end rtl;
+
