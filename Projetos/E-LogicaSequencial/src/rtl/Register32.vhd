@@ -15,6 +15,7 @@ entity Register32 is
 end entity;
 
 architecture rtl of Register32 is
+--Declarando componentes a importar
 	component Register16 is
 		port(
 			clock:   in STD_LOGIC;
@@ -26,6 +27,9 @@ architecture rtl of Register32 is
 
 
 begin 
+
+
+-- Primeiros bits da esquerda
 	A2: Register16 port  map (
 		clock => clock, 
 		input => input(15 downto 0), 
@@ -33,6 +37,8 @@ begin
 		output => output(15 downto 0)
 		);
 
+
+-- Ultimos bits da direita
 	A3: Register16 port  map (
 		clock => clock, 
 		input => input(31 downto 16), 
