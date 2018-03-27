@@ -13,3 +13,30 @@ entity Register16 is
 		output: out STD_LOGIC_VECTOR(15 downto 0)
 	);
 end entity;
+
+architecture rtl of Register8 is
+
+	component Register8 is --Importando o arquivo Register8
+	port(
+		clock:   in STD_LOGIC;
+		input:   in STD_LOGIC_VECTOR(7 downto 0);
+		load:    in STD_LOGIC;
+		output: out STD_LOGIC_VECTOR(7 downto 0);
+	end component;
+
+begin
+
+
+M0: Register8 port map( --Bit mais da esquerda
+	clock => clock,
+	input => input(0),
+	load => load,
+	output => output(0)
+	);
+
+M1: Register8 port map(
+		clock => clock,
+		input => input(1),
+		load => load,
+		output => output(1)
+	);
