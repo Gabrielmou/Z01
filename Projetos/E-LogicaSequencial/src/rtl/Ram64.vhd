@@ -4,7 +4,7 @@
 
 Library ieee; 
 use ieee.std_logic_1164.all;
-  
+
 entity Ram64 is
 	port(
 		clock:   in  STD_LOGIC;
