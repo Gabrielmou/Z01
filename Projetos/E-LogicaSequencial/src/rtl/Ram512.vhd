@@ -72,5 +72,6 @@ begin
 	e7: Ram64 port map (clock,input,load,address( 5 downto 0 ),w7);
 	e8: Ram64 port map (clock,input,load,address( 5 downto 0 ),w8);
 	e9: Mux8Way16 port map (w1,w2,w3,w4,w5,w6,w7,w8,address(8 downto 6),output); -- De acordo com o address, um dos register é responsável pelo output
+
 end rtl;
 
