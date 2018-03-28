@@ -16,7 +16,9 @@ entity Ram512 is
 end entity;
 
 architecture rtl of Ram512 is
-	component Ram64
+
+--Declarando componentes da arquitetura
+	component Ram64 
 		port(
 			clock:   in  STD_LOGIC;
 			input:   in  STD_LOGIC_VECTOR(15 downto 0);
@@ -56,11 +58,11 @@ architecture rtl of Ram512 is
 				q:   out STD_LOGIC_VECTOR(15 downto 0)
 			);
 	end component;
-signal w1,w2,w3,w4,w5,w6,w7,w8:   STD_LOGIC_VECTOR(15 downto 0);
-signal v1, v2, v3, v4, v5, v6, v7, v8: STD_LOGIC;
+signal w1,w2,w3,w4,w5,w6,w7,w8:   STD_LOGIC_VECTOR(15 downto 0); -- o sinal que entra no Mux são vetores de 16 bits
+signal v1, v2, v3, v4, v5, v6, v7, v8: STD_LOGIC; 
 
 begin
-	e0: DMux8Way port map(load, address(8 downto 6), v1, v2, v3, v4, v5, v6, v7, v8);
+	e0: DMux8Way port map(load, address(8 downto 6), v1, v2, v3, v4, v5, v6, v7, v8); -- Dependendo do address, o load vai para um dos registers
 	e1: Ram64 port map (clock,input,load,address( 5 downto 0 ),w1);
 	e2: Ram64 port map (clock,input,load,address( 5 downto 0),w2);
 	e3: Ram64 port map (clock,input,load,address( 5 downto 0 ),w3);
@@ -69,6 +71,6 @@ begin
 	e6: Ram64 port map (clock,input,load,address( 5 downto 0 ),w6);
 	e7: Ram64 port map (clock,input,load,address( 5 downto 0 ),w7);
 	e8: Ram64 port map (clock,input,load,address( 5 downto 0 ),w8);
-	e9: Mux8Way16 port map (w1,w2,w3,w4,w5,w6,w7,w8,address(8 downto 6),output);
+	e9: Mux8Way16 port map (w1,w2,w3,w4,w5,w6,w7,w8,address(8 downto 6),output); -- De acordo com o address, um dos register é responsável pelo output
 end rtl;
 
