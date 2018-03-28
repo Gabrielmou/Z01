@@ -1,4 +1,4 @@
-- Elementos de Sistemas
+-- Elementos de Sistemas
 -- by Luciano Soares
 -- Register64.vhd
 
