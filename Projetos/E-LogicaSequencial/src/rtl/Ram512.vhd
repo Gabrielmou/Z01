@@ -14,3 +14,6 @@ entity Ram512 is
 		output:  out STD_LOGIC_VECTOR(15 downto 0)
 	);
 end entity;
+
+architecture rtl of Ram512 is
+
