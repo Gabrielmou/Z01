@@ -26,6 +26,22 @@ architecture rtl of Ram512 is
 		);
 	end component;
 
+	component DMux8Way
+			port ( 
+					a:   in  STD_LOGIC;
+					sel: in  STD_LOGIC_VECTOR(2 downto 0);
+					q0:  out STD_LOGIC;
+					q1:  out STD_LOGIC;
+					q2:  out STD_LOGIC;
+					q3:  out STD_LOGIC;
+					q4:  out STD_LOGIC;
+					q5:  out STD_LOGIC;
+					q6:  out STD_LOGIC;
+					q7:  out STD_LOGIC
+				);
+
+	end component;
+
 	component Mux8Way16
 		port ( 
 				a:   in  STD_LOGIC_VECTOR(15 downto 0);
@@ -39,10 +55,6 @@ architecture rtl of Ram512 is
 				sel: in  STD_LOGIC_VECTOR(2 downto 0);
 				q:   out STD_LOGIC_VECTOR(15 downto 0)
 			);
-	end component;
-
-	component DMux8Way16
-
 	end component;
 signal w1,w2,w3,w4,w5,w6,w7,w8:   STD_LOGIC_VECTOR(15 downto 0);
 
