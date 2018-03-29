@@ -1,7 +1,7 @@
 ﻿# Testes a serem executados
 # Descomente os módulos que deseja testar
   
-#FlipFlopD.vhd
+FlipFlopD.vhd
 #BinaryDigit.vhd
 #Register8.vhd
 #Register16.vhd
@@ -11,4 +11,4 @@
 #Ram64.vhd
 #Ram512.vhd
 #Ram4K.vhd
-PC.vhd
+#PC.vhd
