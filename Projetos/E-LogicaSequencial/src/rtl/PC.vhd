@@ -26,7 +26,25 @@ end entity;
 
 architecture arch of PC is
 
+signal count : unsigned (15 downto 0) := (others => '0');
+
 begin
 
+	process(clock,increment,load,reset)
+	begin
+		if(reset = '1') then 
+			count  <= (others => '0');
+		elsif (rising_edge(clock)) then
+			if (load = '1') then
+				count <=  unsigned(input);
+			elsif (increment = '1') then
+			 	count  <= count + x"0001";
+			else
+				count <= count;
+			end  if;
+		end if;
+	end process;
+
+	output <= std_logic_vector(count);
 
 end architecture;
