@@ -32,9 +32,9 @@ begin
 -- Primeiros bits da esquerda
 	A2: Register32 port  map (
 		clock => clock, 
-		input => input(63 downto 31), 
+		input => input(63 downto 32), 
 		load => load, 
-		output => output(63 downto 31)
+		output => output(63 downto 32)
 		);
 
 
