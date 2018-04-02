@@ -56,20 +56,20 @@ architecture rtl of Ram4k is
 	);
 	end component;
 
-signal t1,t2,t3,t4,t5,t6,t7,t8    STD_LOGIC_VECTOR(15 downto 0);
-signal i1,i2,i3,i4,i5,i6,i7,i8 STD_LOGIC;
+signal t1,t2,t3,t4,t5,t6,t7,t8: STD_LOGIC_VECTOR(15 downto 0);
+signal i1,i2,i3,i4,i5,i6,i7,i8: STD_LOGIC;
 
 begin 
-	R0 Dmux8Way port map(load, address(11 downto 9),i1,i2,i3,i4,i5,i6,i7,i8);
-	R1 Ram512 port map (clock,input,load,address( 8 downto 0 ),t1);
-	R2 Ram512 port map (clock,input,load,address( 8 downto 0 ),t2);
-	R3 Ram512 port map (clock,input,load,address( 8 downto 0 ),t3);
-	R4 Ram512 port map (clock,input,load,address( 8 downto 0 ),t4);
-	R5 Ram512 port map (clock,input,load,address( 8 downto 0 ),t5);
-	R6 Ram512 port map (clock,input,load,address( 8 downto 0 ),t6);
-	R7 Ram512 port map (clock,input,load,address( 8 downto 0 ),t7);
-	R8 Ram512 port map (clock,input,load,address( 8 downto 0 ),t8);
-	R9 Mux8Way16 port map(t1,t2,t3,t4,t5,t6,t7,t8,address(11 downto 9),output);
+	R0: Dmux8Way port map(load, address(11 downto 9),i1,i2,i3,i4,i5,i6,i7,i8);
+	R1: Ram512 port map (clock,input,load,address( 8 downto 0 ),t1);
+	R2: Ram512 port map (clock,input,load,address( 8 downto 0 ),t2);
+	R3: Ram512 port map (clock,input,load,address( 8 downto 0 ),t3);
+	R4: Ram512 port map (clock,input,load,address( 8 downto 0 ),t4);
+	R5: Ram512 port map (clock,input,load,address( 8 downto 0 ),t5);
+	R6: Ram512 port map (clock,input,load,address( 8 downto 0 ),t6);
+	R7: Ram512 port map (clock,input,load,address( 8 downto 0 ),t7);
+	R8: Ram512 port map (clock,input,load,address( 8 downto 0 ),t8);
+	R9: Mux8Way16 port map(t1,t2,t3,t4,t5,t6,t7,t8,address(11 downto 9),output);
 
 end rtl;
  
