@@ -16,7 +16,7 @@ entity Ram4K is
 end entity;
 
 architecture rtl of Ram4k is
-	component Ram512
+	component Ram512 is
 		port(
 			clock   in  STD_LOGIC;
 			input   in  STD_LOGIC_VECTOR(15 downto 0);
