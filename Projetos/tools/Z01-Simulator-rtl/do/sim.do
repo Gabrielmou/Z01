@@ -19,6 +19,13 @@ vcom -work work ./Modulos/dispositivos/ROM/ROM32K.vhd
 vcom -work work ./Modulos/dispositivos/PLL/PLL.vhd
 vcom -work work ./Modulos/dispositivos/PLL/PLL_sim/PLL.vho
 
+vcom -work work ./Modulos/CircuitosSequenciais/BinaryDigit.vhd
+vcom -work work ./Modulos/CircuitosSequenciais/Register16.vhd
+
+vcom -work work ./Modulos/CPU/Computador.vhd
+vcom -work work ./Modulos/CPU/Computador_tb.vhd
+
+
 #################################
 # Carrega simulação no computador_tb
 #################################
@@ -39,7 +46,7 @@ add wave -position end sim:/computador_tb/c1/MAIN_CPU/*
 # Executa simulação
 ################################
 
-run 1010 ns
+run 1000 ns
 
 ################################
 # Exporta resultado (list)
