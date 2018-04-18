@@ -16,4 +16,4 @@ SIMULATOR = os.path.dirname(os.path.abspath(__file__))+"/../../tools/Z01-Simulat
 if __name__ == "__main__":
     root = os.getcwd()
     os.chdir(SIMULATOR)
-    os.system('python main.py')
+    os.system('python3 main.py')
