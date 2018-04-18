@@ -33,4 +33,4 @@ END: ;
     leaw $2, %A ; define A como 2   
     movw %S,(%A); guarda S na RAM[2], sendo S o valor da RAM MAX
 
-    
+
