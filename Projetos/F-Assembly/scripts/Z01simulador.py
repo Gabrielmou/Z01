@@ -17,12 +17,8 @@ SIMULATOR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..', 't
 if __name__ == "__main__":
     root = os.getcwd()
     os.chdir(SIMULATOR)
-<<<<<<< HEAD
-    os.system('python3 main.py')
-=======
 
     # tenta detectar a versão do python do sistema
     # se python2 for a padrão, forca a execucao
     # com python 3
     os.system('python main.py')
->>>>>>> upstream/master
