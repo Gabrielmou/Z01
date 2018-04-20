@@ -1,9 +1,9 @@
-# do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/tools/scripts/../Z01-Simulator-rtl-2/do/sim.do
+# do /home/andre/Documentos/Z01_Brejeiros/Projetos/tools/scripts/../Z01-Simulator-rtl-2/do/sim.do
 # 1
 # 1
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:27 on Apr 19,2018
+# Start time: 23:39:55 on Apr 19,2018
 # vcom -work z01 ./Modulos/dispositivos/RAM_fpga/RAM16K.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -11,10 +11,10 @@
 # -- Loading package altera_mf_components
 # -- Compiling entity RAM16K
 # -- Compiling architecture SYN of ram16k
-# End time: 18:18:27 on Apr 19,2018, Elapsed time: 0:00:00
+# End time: 23:39:55 on Apr 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:27 on Apr 19,2018
+# Start time: 23:39:55 on Apr 19,2018
 # vcom -work z01 ./Modulos/dispositivos/ROM/ROM32K.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -22,76 +22,14 @@
 # -- Loading package altera_mf_components
 # -- Compiling entity ROM32K
 # -- Compiling architecture SYN of rom32k
-# End time: 18:18:27 on Apr 19,2018, Elapsed time: 0:00:00
+# End time: 23:39:55 on Apr 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim z01.computador_tb 
-# Start time: 18:18:27 on Apr 19,2018
+# Start time: 23:39:55 on Apr 19,2018
 # Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading z01.computador_tb(rtl)
-# Loading z01.computador(logic)
-# Loading z01.cpu(arch)
-# Loading z01.controlunit(arch)
-# Loading z01.register16(arch)
-# Loading z01.binarydigit(arch)
-# Loading z01.mux2way(arch)
-# Loading z01.flipflopd(arch)
-# Loading z01.mux16(arch)
-# Loading z01.pc(arch)
-# Loading z01.alu(arch)
-# Loading z01.zerador16(struczero16)
-# Loading z01.inversor16(strucnega16)
-# Loading z01.add16(arch)
-# Loading z01.fulladder(arch)
-# Loading z01.and16(arch)
-# Loading z01.comparador16(struccomp16)
-# Loading altera_mf.altera_mf_components
-# Loading z01.rom32k(syn)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)
-# Loading z01.ram16k(syn)
-# ** Warning: Design size of 10915 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 1 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 3 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 5 ns  Iteration: 1  Instance: /computador_tb/c1/RAM/altsyncram_component
-# End time: 18:18:28 on Apr 19,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 19
+# doVOpenFlatFile(): INTERNAL ERROR: page load failed for file /home/andre/Documentos/Z01_Brejeiros/Projetos/tools/Z01-Simulator-rtl-2/z01/computador_tb/rtl.psm (9:9 1:1 53 0 0 9568 0x0:0x5ad0ec3d)
+# ** Error: (vsim-3171) Could not find machine code for '/home/andre/Documentos/Z01_Brejeiros/Projetos/tools/Z01-Simulator-rtl-2/z01.computador_tb(rtl)'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 23:39:55 on Apr 19,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
