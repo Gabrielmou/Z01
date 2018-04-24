@@ -21,7 +21,7 @@
 # -- Compiling entity DMux2Way
 # -- Compiling architecture rtl of DMux2Way
 # -- Compiling entity DMux4Way
-# -- Compiling architecture rtl of DMux4Wa
+# -- Compiling architecture rtl of DMux4Way
 # -- Compiling entity DMux8Way
 # -- Compiling architecture rtl of Dmux8Way
 # -- Compiling entity Mux16
