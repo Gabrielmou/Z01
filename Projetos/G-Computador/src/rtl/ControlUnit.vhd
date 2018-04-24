@@ -23,24 +23,29 @@ end entity;
 
 architecture arch of ControlUnit is
 begin
-
-	muxALUI_A <= not instruction(12);
-
-    loadA <= (instruction(5) and instruction(15)) or (not instruction(15));	
-
-    loadD <= (instruction(4) and instruction(15));
-
-    muxAM_ALU <= instruction(12);
-
-    zx <= instruction(11);
-    nx <= instruction(10);
-    zy <= instruction(9);
-    ny <= instruction(8);
-    f  <= instruction(7);
-    no <= instruction(6);
-
-    LoadM <= instruction(2)   and instruction(15);
-    LoadM <= instruction(3)   and instruction(15);
-    loadPC <= instruction(15) and ((instruction(0)  and ((not ng) and (not zr))) or (instruction(1) and zr) or (instruction(2) and ng));
-
+-- MUX
+	muxALUI_A <= not instruction(15);
+    muxAM_ALU <= instruction(14);
+    muxSD_ALU <= instruction(13);
+-- ALU
+    zx <= instruction(12);
+    nx <= instruction(11);
+    zy <= instruction(10);
+    ny <= instruction(9);
+    f  <= instruction(8);
+    no <= instruction(7);
+-- LOADS
+    loadA <= '1' when muxALUI_A else
+        instruction(6);
+    loadD <= '0' when muxALUI_A else
+        instruction(4);
+    loadS <= '0' when muxALUI_A else
+        instruction(5);
+    loadM <= '0' when muxALUI_A else
+        instruction(3);
+    loadPC <= '0' when muxALUI_A else
+        '1' when instruction(1) and zr else
+        '1' when instruction(2) and ng else
+        '1' when instruction(0) and not ng and not zr else
+        '0';
 end architecture;
