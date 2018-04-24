@@ -40,7 +40,7 @@ ARCHITECTURE logic OF MemoryIO IS
       PORT(
           INPUT        : IN STD_LOGIC_VECTOR(15 downto 0);
           LOAD         : IN  STD_LOGIC;
-          ADDRESS      : IN STD_LOGIC_VECTOR(13 downto 0);
+          ADDRESS      : IN STD_LOGIC_VECTOR(14 downto 0);
 
           -- Sistema
           CLK_FAST : IN  STD_LOGIC;
@@ -61,7 +61,7 @@ ARCHITECTURE logic OF MemoryIO IS
   component RAM16K IS
       PORT
       (
-          address	: IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+          address	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
           clock		: IN STD_LOGIC  := '1';
           data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
           wren		: IN STD_LOGIC ;
@@ -70,6 +70,28 @@ ARCHITECTURE logic OF MemoryIO IS
   end component;
 
 BEGIN
+	M1: Screen 
+            port map(
+                INPUT,
+                LOAD,
+                ADDRESS,
+                CLK_FAST,
+                CLK_SLOW,
+                RST,
+                LCD_INIT_OK,
+                LCD_CS_N,
+                LCD_D,
+	            LCD_RD_N,
+                LCD_RESET_N,
+                LCD_RS,
+                LCD_WR_N);
 
+	M2: RAM16K 
+            port map(
+                ADDRESS,
+                CLK_FAST,
+                INPUT,
+                LOAD,
+                OUTPUT);
 
 END logic;
