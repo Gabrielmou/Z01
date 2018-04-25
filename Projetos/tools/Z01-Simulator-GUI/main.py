@@ -3,7 +3,6 @@
 # Dez/2017
 # Disciplina Elementos de Sistemas
 import sys, os, tempfile
-import argparse
 
 if sys.version_info[0] < 3:
     print ("Precisa ser o Python 3")
@@ -68,7 +67,6 @@ class AppMain(Ui_MainWindow):
         self.config_dialog_ui = config_dialog.Ui_Dialog()
         self.config_dialog_ui.setupUi(self.config_dialog)
         self.config_dialog_ui.assemblerLineEdit.setText("../jar/Z01-Assembler.jar")
-        self.config_dialog_ui.rtlLineEdit.setText("../Z01-Simulator-rtl-2/")
 
     def setup_clean_views(self, table, rows=100, caption="Dados", line_header=None):
         model = QStandardItemModel(rows, 1, self.window)
@@ -123,9 +121,6 @@ class AppMain(Ui_MainWindow):
         self.config_dialog_ui.procurarButton.clicked.connect(self.on_search_assembler)
         self.config_dialog_ui.alterarButton.clicked.connect(self.config_dialog.close)
         self.actionConfiguracoes.triggered.connect(self.config_dialog.show)
-
-    def change_rtl_dir(self, new_dir):
-    	self.config_dialog_ui.rtlLineEdit.setText(new_dir)
 
     def on_rom_assembly(self):
         self.editor_converting = True
@@ -387,7 +382,7 @@ class AppMain(Ui_MainWindow):
             print("Simulador está sendo executado...")
             return False
 
-        self.simulator_task = SimulatorTask("temp/", False, self.config_dialog_ui.simGUIBox.isChecked(), self.config_dialog_ui.rtlLineEdit.text())
+        self.simulator_task = SimulatorTask("temp/", False, self.config_dialog_ui.simGUIBox.isChecked())
         rom_in              = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
         rom_out             = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
         lst_out             = tempfile.SpooledTemporaryFile(max_size=self.TEMP_MAX_RAM_USE, mode="w+")
@@ -526,14 +521,9 @@ class AppMain(Ui_MainWindow):
         self.label_ALU.setPixmap(self.pixmap_ALU.scaledToWidth(newSize))
 
 if __name__ == "__main__":
-	parser = argparse.ArgumentParser(description="Z01 Simulator command line options")
-	parser.add_argument("--rtl_dir", default=None)
-	args = parser.parse_args()
-	qapp = QApplication(sys.argv)
+    qapp = QApplication(sys.argv)
     ##qapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-	app = AppMain()
-	if args.rtl_dir is not None:
-		app.change_rtl_dir(args.rtl_dir)
-	app.show()
-	sys.exit(qapp.exec_())
+    app = AppMain()
+    app.show()
+    sys.exit(qapp.exec_())
 
