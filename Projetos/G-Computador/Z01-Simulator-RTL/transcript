@@ -1,87 +1,1621 @@
-# do /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
 # 1
 # 1
 # 1
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:34:40 on Apr 23,2018
+# Start time: 17:31:05 on Apr 25,2018
 # vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
 # -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
 # -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
 # -- Compiling entity DMux2Way
-# ** Error: ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd(1): near "library": (vcom-1576) expecting ';'.
-# ** Error: ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd(1): VHDL Compiler exiting
-# End time: 19:34:40 on Apr 23,2018, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: /mnt/Dados/opt/altera/modelsim_ase/linuxaloem/vcom failed.
-# Error in macro /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 3
-# /mnt/Dados/opt/altera/modelsim_ase/linuxaloem/vcom failed.
-#     while executing
-# "vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/*.vhd"
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux4Way.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:35:08 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux4Way.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
+# -- Compiling architecture rtl of DMux2Way
 # -- Compiling entity DMux4Way
-# End time: 19:35:08 on Apr 23,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux8Way.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:36:03 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux8Way.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
+# -- Compiling architecture rtl of DMux4Way
 # -- Compiling entity DMux8Way
-# End time: 19:36:03 on Apr 23,2018, Elapsed time: 0:00:00
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:31:05 on Apr 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:36:05 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd 
+# Start time: 17:31:05 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity DMux2Way
-# ** Error: /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd(11): near "EOF": (vcom-1576) expecting ';'.
-# End time: 19:36:05 on Apr 23,2018, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:36:06 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity DMux2Way
-# ** Error: /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd(11): near "EOF": (vcom-1576) expecting ';'.
-# End time: 19:36:06 on Apr 23,2018, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:36:37 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity DMux2Way
-# ** Error: /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd(11): near "EOF": (vcom-1576) expecting ';'.
-# End time: 19:36:37 on Apr 23,2018, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:36:48 on Apr 23,2018
-# vcom -reportprogress 300 -work work /home/corsi/Dropbox/Insper/3s-ElementoDeSistemas/5-Repositorios/Z01/Projetos/C-LogicaCombinacional/src/rtl/DMux2Way.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity DMux2Way
-# End time: 19:36:48 on Apr 23,2018, Elapsed time: 0:00:00
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:31:05 on Apr 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:31:05 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:31:05 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:31:05 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(111): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(111): Illegal concurrent statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(114): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(114): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(116): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(116): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(118): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(118): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(148): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(152): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(159): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(170): near "END": (vcom-1576) expecting ';'.
+# End time: 17:31:05 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:33:12 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:33:12 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:33:12 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:33:12 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:33:12 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:33:12 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:33:12 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(111): Illegal concurrent statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(114): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(114): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(116): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(116): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(118): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(118): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(148): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(152): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(159): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(170): near "END": (vcom-1576) expecting ';'.
+# End time: 17:33:13 on Apr 25,2018, Elapsed time: 0:00:01
+# Errors: 9, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:28 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:35:29 on Apr 25,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:35:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:35:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(110): near "begin": syntax error
+# ** Error: ../src/rtl/MemoryIO.vhd(114): near "elsif": (vcom-1576) expecting END.
+# End time: 17:35:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:17 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:36:17 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:17 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:36:17 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:17 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:36:17 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:17 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(112): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(115): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(115): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(119): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(119): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:36:17 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:57 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:36:57 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:57 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:36:57 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:57 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:36:57 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:36:57 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(112): (vcom-1581) No feasible entries for infix operator '<'.
+# ** Error: ../src/rtl/MemoryIO.vhd(112): Type error resolving infix expression "<" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/rtl/MemoryIO.vhd(115): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(115): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(119): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(119): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:36:58 on Apr 25,2018, Elapsed time: 0:00:01
+# Errors: 13, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:27 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:37:27 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:27 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:37:27 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:27 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:37:27 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:27 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(112): near "1000000000000000": (vcom-119) Integer value exceeds INTEGER'high.
+# ** Error: ../src/rtl/MemoryIO.vhd(112): (vcom-1581) No feasible entries for infix operator '<'.
+# ** Error: ../src/rtl/MemoryIO.vhd(112): Type error resolving infix expression "<" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/rtl/MemoryIO.vhd(115): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(115): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(119): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(119): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:37:27 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 14, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:35 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:37:35 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:35 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:37:35 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:36 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:37:36 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:36 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(112): near "100000000000000": (vcom-119) Integer value exceeds INTEGER'high.
+# ** Error: ../src/rtl/MemoryIO.vhd(112): (vcom-1581) No feasible entries for infix operator '<'.
+# ** Error: ../src/rtl/MemoryIO.vhd(112): Type error resolving infix expression "<" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/rtl/MemoryIO.vhd(115): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(115): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(119): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(119): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:37:36 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 14, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:54 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:37:54 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:54 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:37:54 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:54 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:37:54 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:37:54 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(115): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(115): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '6' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(117): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: ../src/rtl/MemoryIO.vhd(119): String literal has a character '2' not in the enumeration type ieee.std_logic_1164.STD_LOGIC.
+# ** Warning: ../src/rtl/MemoryIO.vhd(119): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 15 is not equal to right length 5).
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:37:54 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 11, Warnings: 2
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:39:42 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:39:42 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:39:42 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:39:42 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:39:42 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:39:42 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:39:42 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(137): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(145): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(150): near ";": (vcom-1576) expecting ',' or ')'.
+# ** Error: ../src/rtl/MemoryIO.vhd(154): Statement cannot be labeled.
+# ** Error: ../src/rtl/MemoryIO.vhd(162): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(161): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(172): near "END": (vcom-1576) expecting ';'.
+# End time: 17:39:42 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:41:40 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:41:40 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:41:40 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:41:40 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:41:40 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:41:40 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:41:40 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(138): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(147): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(155): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(164): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(163): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(174): near "END": (vcom-1576) expecting ';'.
+# End time: 17:41:40 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:42:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:42:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:42:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:42:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:42:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:42:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:42:29 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(138): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(147): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(155): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(164): Illegal sequential statement.
+# ** Error: ../src/rtl/MemoryIO.vhd(163): (vcom-1454) Formal "q3" of mode OUT cannot be associated with an expression.
+# ** Error: ../src/rtl/MemoryIO.vhd(174): near "END": (vcom-1576) expecting ';'.
+# End time: 17:42:29 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+do /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/sim.do
+# 1
+# 1
+# 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:01 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../C-LogicaCombinacional/src/rtl/And16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter16.vhd ../../C-LogicaCombinacional/src/rtl/BarrelShifter8.vhd ../../C-LogicaCombinacional/src/rtl/DMux2Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux4Way.vhd ../../C-LogicaCombinacional/src/rtl/DMux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux16.vhd ../../C-LogicaCombinacional/src/rtl/Mux2Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux4Way16.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way.vhd ../../C-LogicaCombinacional/src/rtl/Mux8Way16.vhd ../../C-LogicaCombinacional/src/rtl/Nand.vhd ../../C-LogicaCombinacional/src/rtl/Nor8Way.vhd ../../C-LogicaCombinacional/src/rtl/Not16.vhd ../../C-LogicaCombinacional/src/rtl/Or16.vhd ../../C-LogicaCombinacional/src/rtl/Or8Way.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity And16
+# -- Compiling architecture rtl of And16
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BarrelShifter16
+# -- Compiling architecture rtl of BarrelShifter16
+# -- Compiling entity BarrelShifter8
+# -- Compiling architecture rtl of BarrelShifter8
+# -- Compiling entity DMux2Way
+# -- Compiling architecture rtl of DMux2Way
+# -- Compiling entity DMux4Way
+# -- Compiling architecture rtl of DMux4Way
+# -- Compiling entity DMux8Way
+# -- Compiling architecture rtl of Dmux8Way
+# -- Compiling entity Mux16
+# -- Compiling architecture rtl of Mux16
+# -- Compiling entity Mux2Way
+# -- Compiling architecture rtl of Mux2Way
+# -- Compiling entity Mux4Way
+# -- Compiling architecture rtl of Mux4Way
+# -- Compiling entity Mux4Way16
+# -- Compiling architecture rtl of Mux4Way16
+# -- Compiling entity Mux8Way
+# -- Compiling architecture rtl of Mux8Way
+# -- Compiling entity Mux8Way16
+# -- Compiling architecture rtl of Mux8Way16
+# -- Compiling entity nand_z01
+# -- Compiling architecture rtl of nand_z01
+# -- Compiling entity Nor8Way
+# -- Compiling architecture rtl of Nor8Way
+# -- Compiling entity Not16
+# -- Compiling architecture rtl of Not16
+# -- Compiling entity Or16
+# -- Compiling architecture rtl of Or16
+# -- Compiling entity Or8Way
+# -- Compiling architecture rtl of Or8Way
+# End time: 17:48:01 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:01 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../E-LogicaSequencial/src/rtl/BinaryDigit.vhd ../../E-LogicaSequencial/src/rtl/FlipFlopD.vhd ../../E-LogicaSequencial/src/rtl/PC.vhd ../../E-LogicaSequencial/src/rtl/Ram4K.vhd ../../E-LogicaSequencial/src/rtl/Ram512.vhd ../../E-LogicaSequencial/src/rtl/Ram64.vhd ../../E-LogicaSequencial/src/rtl/Ram8.vhd ../../E-LogicaSequencial/src/rtl/Register16.vhd ../../E-LogicaSequencial/src/rtl/Register32.vhd ../../E-LogicaSequencial/src/rtl/Register64.vhd ../../E-LogicaSequencial/src/rtl/Register8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BinaryDigit
+# -- Compiling architecture rtl of BinaryDigit
+# -- Compiling entity FlipFlopD
+# -- Compiling architecture arch of FlipFlopD
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture arch of PC
+# -- Compiling entity Ram4K
+# -- Compiling architecture rtl of Ram4k
+# -- Compiling entity Ram512
+# -- Compiling architecture rtl of Ram512
+# -- Compiling entity Ram64
+# -- Compiling architecture rtl of Ram64
+# -- Compiling entity Ram8
+# -- Compiling architecture rtl of Ram8
+# -- Compiling entity Register16
+# -- Compiling architecture rtl of Register16
+# -- Compiling entity Register32
+# -- Compiling architecture rtl of Register32
+# -- Compiling entity Register64
+# -- Compiling architecture rtl of Register64
+# -- Compiling entity Register8
+# -- Compiling architecture rtl of Register8
+# End time: 17:48:02 on Apr 25,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:02 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../../D-UnidadeLogicaAritmetica/src/rtl/ALU.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Add16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/FullAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/Inc16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/comparador16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/inversor16.vhd ../../D-UnidadeLogicaAritmetica/src/rtl/zerador16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture rtl of alu
+# -- Compiling entity Add16
+# -- Compiling architecture rtl of Add16
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of FullAdder
+# -- Compiling entity HalfAdder
+# -- Compiling architecture rtl of HalfAdder
+# -- Compiling entity Inc16
+# -- Compiling architecture rtl of Inc16
+# -- Compiling entity comparador16
+# -- Compiling architecture rtl of comparador16
+# -- Compiling entity inversor16
+# -- Compiling architecture rtl of inversor16
+# -- Compiling entity zerador16
+# -- Compiling architecture strucZero16 of zerador16
+# End time: 17:48:02 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:02 on Apr 25,2018
+# vcom -reportprogress 300 -work work ../src/rtl/CPU.vhd ../src/rtl/Computador.vhd ../src/rtl/ControlUnit.vhd ../src/rtl/MemoryIO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CPU
+# -- Compiling architecture arch of CPU
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Computador
+# -- Compiling architecture logic of Computador
+# -- Compiling entity ControlUnit
+# -- Compiling architecture arch of ControlUnit
+# -- Compiling entity MemoryIO
+# -- Compiling architecture logic of MemoryIO
+# ** Error: ../src/rtl/MemoryIO.vhd(111): near "begin": syntax error
+# ** Error: ../src/rtl/MemoryIO.vhd(115): near "elsif": (vcom-1576) expecting END.
+# End time: 17:48:02 on Apr 25,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro /home/gabrielnoal/Documentos/INSPER/Elementos/Z01_Brejeiros/Projetos/G-Computador/Z01-Simulator-RTL/do/load.do line 7
+# /home/gabrielnoal/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work ../src/rtl/*.vhd"
+# Break key hit
