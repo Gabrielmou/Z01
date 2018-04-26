@@ -100,65 +100,75 @@ ARCHITECTURE logic OF MemoryIO IS
 
 signal selD: std_logic_vector(1 downto 0);
 signal selM: std_logic;
+signal inputReg: std_logic_vector(9 downto 0);
+signal dataRam16: std_logic_vector(14 downto 0);
+signal DmuxRam,DmuxReg,DmuxScr: std_logic;
+signal outRam: std_logic_vector(15 downto 0);
+signal outMux: std_logic_vector(15 downto 0);
 
 BEGIN
-
-selD <= "00" when ADDRESS <= 16384; -- RAM16k que na vdd é OUTPUT
-selD <= "01" when ADDRESS == 21184;  -- LED que na vdd é REGISTER
-selD <= "10" when ADDRESS >= 16384 and  ADDRESS < 21184; -- LCD que na vdd é SCREEN
-
-input <= INPUT(9 downto 0);
-output => OUT(9 downto 0);
-
-DATA => b
-q => OUTPUT
+	process (ADDRESS,selD,selM)
+	begin
+		if (ADDRESS < "100000000000000") then -- RAM16k que na vdd é OUTPUT
+			selD <= "00";
+			selM <= '1';
+		elsif (ADDRESS = "101001011000000") then -- LED que na vdd é REGISTER
+			selD <= "01";
+		elsif (ADDRESS >= "100000000000000") and  (ADDRESS < "101001011000000") then  -- LCD que na vdd é SCREEN
+			selD <= "01";
+		elsif (ADDRESS = "101001011000001") then
+			selM <= '0';
+	end if;
 
 	M1: Screen 
 			 port map(
-				 INPUT,
-				 LOAD,
-				 ADDRESS,
-				 CLK_FAST,
-				 CLK_SLOW,
-				 RST,
-				 LCD_INIT_OK,
-				 LCD_CS_N,
-				 LCD_D,
-				 LCD_RD_N,
-				 LCD_RESET_N,
-				 LCD_RS,
-				 LCD_WR_N);
+				INPUT,
+				LOAD,
+				ADDRESS(13 downto 0),
+				CLK_FAST,
+				CLK_SLOW,
+				RST,
+				LCD_INIT_OK,
+				LCD_CS_N,
+				LCD_D,
+				LCD_RD_N,
+				LCD_RESET_N,
+				LCD_RS,
+				LCD_WR_N
+			);
 
 	M2: RAM16K 
 			port map(
-			   ADDRESS,
-			   CLK_FAST,
-			   INPUT,
-			   LOAD,
-			   DATA);
+			    ADDRESS(13 downto 0),
+			    CLK_FAST,
+			    INPUT(14 downto 0),
+			    DmuxRam,
+			    outRam
+			);
 
 	M3: Register16
 			port map(
-			   CLK_SLOW,
-			   INPUT,
-			   LOAD,
-			   OUT
+				CLK_SLOW,
+			    INPUT(9 downto 0),
+			    DmuxReg,
+			    LED
 			);
 	M4: DMux4Way 
-		port map(
-			LOAD,
-			selD,
-			LOAD,
-			LOAD,
-			LOAD,
-			LOAD
-		 );      
+			port map(
+				LOAD,
+				selD,
+				DmuxRam,
+				DmuxReg,
+				DmuxScr,
+				'0'
+			);      
 	M5: Mux2Way
 	        port map(
-                SW,
-                OUTPUT,
-                selM
+                "000000" & SW,
+                outRam,
+                selM,
+				OUTPUT
 
 
-            );
+            )
 END logic;
