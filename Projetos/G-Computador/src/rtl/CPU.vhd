@@ -89,6 +89,7 @@ architecture arch of CPU is
   signal s_loadA: STD_LOGIC;
   signal s_loadD: STD_LOGIC;
   signal s_loadS: STD_LOGIC;
+  --signal s_loadM: STD_LOGIC; --Ver se existe esse loadM
   signal s_loadPC: STD_LOGIC;
 
   signal s_zr: std_logic := '0';
@@ -104,5 +105,28 @@ architecture arch of CPU is
   signal s_pcout: STD_LOGIC_VECTOR(15 downto 0);
 
 begin
+	M1: ControlUnit port map(instruction,s_zr,s_ng,s_muxALUI_A,s_muxAM_ALU,s_muxSD_ALU,s_zx,s_nx,s_zy,s_ny,
+	s_f,s_no,s_loadA,s_loadD,s_loadS,writeM,s_loadPC); --Ver se existe esse loadM
+
+	M2: Mux16 port map(instruction,s_ALUout,s_muxALUI_A,s_muxALUI_Aout);
+
+	M3: Register16 port map(clock,s_muxALUI_Aout,s_loadA,s_regAout);
+
+	M4: Mux16 port map(s_regAout,inM,s_muxAM_ALU,s_muxAM_ALUout);
+
+	M5: Register16 port map(clock,s_ALUout,s_loadS,s_regSout);
+
+	M6: Register16 port map(clock,s_ALUout,s_loadD,s_regDout);
+
+	M7: Mux16 port map(s_regSout,s_regDout,s_muxSD_ALU,s_muxSDout);
+
+	M8: ALU port map(s_muxAM_ALUout,s_muxSDout,instruction(12),instruction(11),instruction(10),instruction(9),
+	instruction(8),instruction(7),s_zr,s_ng,s_ALUout);
+
+	M9: pc port map(clock,'1',s_loadPC,reset,s_regAout,pcout);
+
+	addressM <= s_regAout;
+	outM <= s_ALUout;
+	--writeM <= loadM; --Ver se existe esse loadM!
 
 end architecture;
