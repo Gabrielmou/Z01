@@ -89,12 +89,12 @@ ARCHITECTURE logic OF MemoryIO IS
 			);
 	end component;
 
-	component Mux2Way is
+	component Mux16 is
 		port(
-			a: in std_logic;
-			b: in std_logic;
+			a: in std_logic_vector(15 downto 0);
+			b: in std_logic_vector(15 downto 0);
 			sel: in std_logic;
-			q: out std_logic
+			q: out std_logic_vector(15 downto 0)
 			);
 	end component;
 
@@ -119,6 +119,7 @@ BEGIN
 		elsif (ADDRESS = "101001011000001") then
 			selM <= '0';
 	end if;
+	end process;
 
 	M1: Screen 
 			 port map(
@@ -162,13 +163,13 @@ BEGIN
 				DmuxScr,
 				'0'
 			);      
-	M5: Mux2Way
+	M5: Mux16
 	        port map(
-                "000000" & SW,
-                outRam,
-                selM,
-				OUTPUT
+               "000000" & SW,
+               outRam,
+               selM,
+					OUTPUT
 
 
-            )
-END logic;
+            );
+END ARCHITECTURE;
