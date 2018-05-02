@@ -12,6 +12,8 @@ package assembler;
 import java.io.*;
 import java.util.*;
 
+import assembler.Parser.CommandType;
+
 /**
  * Faz a geração do código gerenciando os demais módulos
  */
@@ -21,7 +23,8 @@ public class Assemble {
     private PrintWriter outHACK = null;    // grava saida do código de máquina em Hack
     boolean debug;                         // flag que especifica se mensagens de debug são impressas
     private SymbolTable table;             // tabela de símbolos (variáveis e marcadores)
-
+    private Parser parser;
+    
     /**
      * Retorna o código binário do mnemônico para realizar uma operação de cálculo.
      * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
@@ -33,7 +36,8 @@ public class Assemble {
         hackFile   = new File(outFileHack);                      // Cria arquivo de saída .hack
         outHACK    = new PrintWriter(new FileWriter(hackFile));  // Cria saída do print para
                                                                  // o arquivo hackfile
-        table      = new SymbolTable();                          // Cria e inicializa a tabela de simbolos
+        table      = new SymbolTable();                      // Cria e inicializa a tabela de simbolos
+    	parser 	   = new Parser(inputFile);
 
     }
 
@@ -45,6 +49,32 @@ public class Assemble {
      * Dependencia : Parser, SymbolTable
      */
     public void fillSymbolTable() throws FileNotFoundException, IOException {
+    	String command = null;
+    	CommandType commandType = null;
+    	String symbol = null;
+    	String label = null;
+    	String[] instruction = null;
+    	int address = 16;
+    	
+    	while (parser.advance()) {
+    		command = parser.command();
+    		commandType = parser.commandType(command);
+    		if (commandType == CommandType.A_COMMAND) {
+    			symbol = parser.symbol(command);
+			}
+    		else if (commandType == CommandType.L_COMMAND) {
+				label = parser.label(command);
+			}
+    		else if (commandType == CommandType.C_COMMAND) {
+				instruction = parser.instruction(command);
+			}
+    		
+    		if (!table.contains(symbol)){
+    			table.addEntry(symbol, address);
+    		}
+    		address ++;
+    	}
+    	
     }
 
     /**
@@ -55,7 +85,26 @@ public class Assemble {
      * Dependencias : Parser, Code
      */
     public void generateMachineCode() throws FileNotFoundException, IOException{
-        Parser parser = new Parser(inputFile);  // abre o arquivo e aponta para o começo
+        Parser newParser = new Parser(inputFile); //Abre o arquivo e aponta para o come�o
+        String command = null;
+    	CommandType commandType = null;
+    	String symbol = null;
+    	String[] instruction = null;
+    	String machineCode = "";
+    	Code code = new Code();
+        while (newParser.advance()) {
+    		command = newParser.command();
+    		commandType = newParser.commandType(command);
+    		if (commandType == CommandType.A_COMMAND) {
+    			symbol = newParser.symbol(command);
+    			machineCode = "0" + code.toBinary(symbol);
+    		}
+    	
+    		else if (commandType == CommandType.C_COMMAND) {
+				
+			}
+    		
+    	}
 
     }
 
