@@ -85,7 +85,7 @@ public class Assemble {
      * Dependencias : Parser, Code
      */
     public void generateMachineCode() throws FileNotFoundException, IOException{
-        Parser newParser = new Parser(inputFile); //Abre o arquivo e aponta para o começo
+        Parser newParser = new Parser(inputFile); //Abre o arquivo e aponta para o comeï¿½o
         String command = null;
     	CommandType commandType = null;
     	String symbol = null;
@@ -95,15 +95,27 @@ public class Assemble {
         while (newParser.advance()) {
     		command = newParser.command();
     		commandType = newParser.commandType(command);
+    		
     		if (commandType == CommandType.A_COMMAND) {
     			symbol = newParser.symbol(command);
-    			machineCode = "0" + code.toBinary(symbol);
+    			if (table.contains(symbol) ) {
+    				Integer symbolAddress = table.getAddress(symbol);
+    				String stringSymbolAddress = Integer.toString(symbolAddress);
+					machineCode = "0" + code.toBinary(stringSymbolAddress);
+				}
+    			else {
+    				machineCode = "0" + code.toBinary(symbol);
+				}
     		}
     	
     		else if (commandType == CommandType.C_COMMAND) {
-				
+    			symbol = newParser.symbol(command);
+    			String calc = code.comp(instruction);
+    			String dest = code.dest(instruction);
+    			String jump = code.jump(instruction);
+    			machineCode = "1"+calc+dest+jump;
 			}
-    		
+    		outHACK.println(machineCode);
     	}
 
     }
