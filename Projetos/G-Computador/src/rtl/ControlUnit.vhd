@@ -35,7 +35,7 @@ begin
     f  <= instruction(8);
     no <= instruction(7);
 -- LOADS
-    loadA <= '1' when muxALUI_A else
+    loadA <= '1' when muxALUI_A = '1' else
         instruction(6);
     loadD <= '0' when muxALUI_A else
         instruction(4);
