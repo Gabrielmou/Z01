@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.File;
 
 /**
  * Encapsula o código de leitura. Carrega as instruções na linguagem assembly,
@@ -18,7 +19,7 @@ import java.util.Scanner;
  */
 public class Parser {
 
-    BufferedReader reader = null;
+    Scanner reader;
 	String command;
 
     /** Enumerator para os tipos de comandos do Assembler. */
@@ -35,8 +36,8 @@ public class Parser {
     public Parser(String file) {
     	
     	try {
-    		FileReader arq = new FileReader(file);
-		    BufferedReader reader = new BufferedReader(arq);
+    		File arq = new File(file);
+            this.reader = new Scanner(arq);
 		}
 
 		// Trata o erro FileNotFoundException, se ele acontecer.
@@ -58,20 +59,17 @@ public class Parser {
      * @return Verdadeiro se ainda há instruções, Falso se as instruções terminaram.
      */
     public Boolean advance() {
-        try {
-            String line;
-			line = reader.readLine();
-            if (line != null) {
+        if(reader.hasNext() == true) {
+            String line = reader.nextLine();
+            if(line.charAt(0) != ';'){
+                line.replace("\t","");
+                this.command = line;
+            }
                 return true;
-            }
-            else {
-            	return false;
-            }
         }
-		catch(IOException exception) {
-			System.out.println(exception);
-		}
-        return false;
+        else{
+            return false;
+        }
     }
 
     /**
@@ -79,19 +77,7 @@ public class Parser {
      * @return a instrução atual para ser analilisada
      */
     public String command() {
-        try {
-			command = reader.readLine();
-			for(int x = 0; x < command.length();x++){
-    		    if (command.charAt(x) == ';'){
-    			    command = command.substring(0, x);
-                }
-			}
-		} 
-        catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-        }
-    	return command;
+    	return this.command;
     }
 
     /**
@@ -103,7 +89,7 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
-        if (command.substring(0,3) == "leaw"){
+        if (command.startsWith("leaw")){
     		return CommandType.A_COMMAND;
         }
         else if (command.charAt(command.length() - 1) == ':'){
@@ -121,17 +107,20 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String symbol(String command) {
-        int marcador = 0;
+        int marcadorinicial = 0;
+        int marcadorfinal = 0;
         String symbol = "";
         if (commandType(command) == CommandType.A_COMMAND){
-             for(int x = 0; x < command.length();x++){
-                if (command.charAt(x) == '$'){
-                    marcador = x;
-                }
-    		    else if (command.charAt(x) == ','){
-    			    symbol = command.substring(marcador, x);
+             for(int x = 0; x < command.length();x++) {
+                 if (command.charAt(x) == '$') {
+                     marcadorinicial = x + 1;
+                 }
+                 if (command.charAt(x) == ',') {
+                     marcadorfinal = x;
+                    break;
                 }
             }
+            symbol = command.substring(marcadorinicial,marcadorfinal);
         }        
     	return symbol;
     }
@@ -145,7 +134,7 @@ public class Parser {
     public String label(String command) {
         String label = "";
         if (commandType(command) == CommandType.L_COMMAND){
-            label = command.substring(0,command.length()-2);
+            label = command.substring(0,command.length()-1);
         }
     	return label;
     }
@@ -157,11 +146,9 @@ public class Parser {
      * @return um vetor de string contento os tokens da instrução (as partes do comando).
      */
    public String[] instruction(String command) {
-        if (commandType(command) == CommandType.C_COMMAND){
-            String[] instruction = new String[3];
-            command = command.replace(',',' ');
-            instruction = command.split(" ");
-        }
-        return instruction;
+	   String[] instruction = new String[3];
+	   command = command.replace(',',' ');
+	   instruction = command.split(" ");
+	   return instruction;
    }
 }
