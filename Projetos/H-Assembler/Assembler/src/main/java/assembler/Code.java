@@ -4,19 +4,20 @@
  */
 
 
+
 package assembler;
 
 /**
- * Traduz mnemônicos da linguagem assembly para códigos binários da arquitetura Z0.
+ * Traduz mnemÃ´nicos da linguagem assembly para cÃ³digos binÃ¡rios da arquitetura Z0.
  */
 public class Code {
 	private static int vectorSize;
 	private static int number;
 
     /**
-     * Retorna o código binário do(s) registrador(es) que vão receber o valor da instrução.
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 4 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do(s) registrador(es) que vÃ£o receber o valor da instruÃ§Ã£o.
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 4 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String dest(String[] mnemnonic) throws InvalidDestException{
     	vectorSize = mnemnonic.length;
@@ -27,7 +28,7 @@ public class Code {
     			&& mnemnonic[0] != "jne"
     			&& mnemnonic[0] != "jle"
     			&& mnemnonic[0] != "jmp"
-    			&& mnemnonic[0] != "nop"){ //PEGANDO OS CASOS QUE N�O S�O MOVE MAS AINDA S�O V�LIDOS
+    			&& mnemnonic[0] != "nop"){ //PEGANDO OS CASOS QUE NÃO SÃO MOVE MAS AINDA SÃO VÁLIDOS
         	if (mnemnonic[vectorSize - 1] == "%A") {
         		return "1000";
         	}
@@ -86,12 +87,12 @@ public class Code {
     }
 
     /**
-     * Retorna o código binário do mnemônico para realizar uma operação de cálculo.
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 7 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do mnemÃ´nico para realizar uma operaÃ§Ã£o de cÃ¡lculo.
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 7 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String comp(String[] mnemnonic) throws InvalidCompException{  	
-    	//Jumps - Depende da segunda string, ou � %D ou %S
+    	//Jumps - Depende da segunda string, ou é %D ou %S
 		if (mnemnonic[0] == "je"
     			|| mnemnonic[0] == "jge"
     			|| mnemnonic[0] == "jl"
@@ -106,8 +107,8 @@ public class Code {
     		}
     	}
     	
-    	//Movs - Nesse caso a segunda string � a determinante, a terceira � ignorada
-		//Sempre que a terceira string � (%A) ela importa
+    	//Movs - Nesse caso a segunda string é a determinante, a terceira é ignorada
+		//Sempre que a terceira string é (%A) ela importa
 		else if(mnemnonic[0] == "movw") {
 			if (mnemnonic[1] == "%A") {
 				return "00110000";
@@ -186,9 +187,9 @@ public class Code {
     }
 
     /**
-     * Retorna o código binário do mnemônico para realizar uma operação de jump (salto).
-     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
-     * @return Opcode (String de 3 bits) com código em linguagem de máquina para a instrução.
+     * Retorna o cÃ³digo binÃ¡rio do mnemÃ´nico para realizar uma operaÃ§Ã£o de jump (salto).
+     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
+     * @return Opcode (String de 3 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
      */
     public static String jump(String[] mnemnonic) throws InvalidJumpException{
     	vectorSize = mnemnonic.length;
@@ -240,9 +241,9 @@ public class Code {
     }
 
     /**
-     * Retorna o código binário de um valor decimal armazenado numa String.
-     * @param  symbol valor numérico decimal armazenado em uma String.
-     * @return Valor em binário (String de 15 bits) representado com 0s e 1s.
+     * Retorna o cÃ³digo binÃ¡rio de um valor decimal armazenado numa String.
+     * @param  symbol valor numÃ©rico decimal armazenado em uma String.
+     * @return Valor em binÃ¡rio (String de 15 bits) representado com 0s e 1s.
      */
     public static String toBinary(String symbol) {
         number = Integer.parseInt(symbol);
