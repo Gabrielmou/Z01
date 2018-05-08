@@ -9,6 +9,7 @@ INICIO:
     movw (%A), %D ; define S=RAM[0]
     leaw $1, %A   ; define A como 1
     movw (%A), %S ; define D=RAM[1]
+    decw %D
 WHILE:
     leaw $END, %A ;
     je
