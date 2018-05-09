@@ -3,15 +3,15 @@ function div 2
         pop local 0
         
 	push constant 0
-	pop local 1 //x=0
+	pop local 1
 	
 	
 label loop
-	push argument 0
+	push local 0
 	push argument 1
 	lt
 	if-goto end
-	push argument 0
+	push local 0
 	push argument 1
 	sub
 	pop local 0
@@ -24,6 +24,6 @@ label loop
 	
 	goto loop
 label end
-	push local 0
+	push local 1
 	return
 
