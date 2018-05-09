@@ -22,30 +22,29 @@ entity ControlUnit is
 end entity;
 
 architecture arch of ControlUnit is
+signal Signal15 : std_logic;
+
 begin
+
 -- MUX
-	muxALUI_A <= not instruction(15);
-    muxAM_ALU <= instruction(14);
-    muxSD_ALU <= instruction(13);
--- ALU
-    zx <= instruction(12);
-    nx <= instruction(11);
-    zy <= instruction(10);
-    ny <= instruction(9);
-    f  <= instruction(8);
-    no <= instruction(7);
+    muxALUI_A <= not Signal15;
+    muxAM_ALU <= Signal15 and instruction(14);
+    muxSD_ALU <= Signal15 and not instruction(13);
+-- Controle
+    zx <= Signal15 and instruction(12);
+    nx <= Signal15 and instruction(11);
+    zy <= Signal15 and instruction(10);
+    ny <= Signal15 and  instruction(9);
+    f  <= Signal15 and  instruction(8);
+    no <= Signal15 and instruction(7);
 -- LOADS
-    loadA <= '1' when muxALUI_A else
-        instruction(6);
-    loadD <= '0' when muxALUI_A else
-        instruction(4);
-    loadS <= '0' when muxALUI_A else
-        instruction(5);
-    loadM <= '0' when muxALUI_A else
-        instruction(3);
-    loadPC <= '0' when muxALUI_A else
-        '1' when instruction(1) and zr else
-        '1' when instruction(2) and ng else
-        '1' when instruction(0) and not ng and not zr else
-        '0';
+    loadA <= (Signal15 and instruction(6)) or (not instruction(15));   
+    loadD <= Signal15 and instruction(4);
+    loadS <= Signal15 and instruction(5);
+    loadM <= Signal15 and instruction(3);
+    loadPC <= ((instruction(2) and ng) or
+		(instruction(1) and zr) or
+		(instruction(0) and (not zr) and (not ng))) and 
+		instruction(15); 
+
 end architecture;
