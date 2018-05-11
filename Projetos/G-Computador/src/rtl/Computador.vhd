@@ -117,8 +117,8 @@ M1: ROM32K
 	port map(
 		address => PC, 
 		clock => CLK_SLOW,
-		q <= INSTRUCTION);
-	)
+		q <= INSTRUCTION
+	);
 M2: CPU
 	port map(
 		clock => CLK_SLOW,
