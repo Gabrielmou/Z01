@@ -48,4 +48,5 @@ script:
   - python Projetos/E-LogicaSequencial/script/testeLogicaSequencial.py
   - python Projetos/F-Assembly/scripts/testeAssembly.py -v
   - python Projetos/G-Computador/script/testeAssemblyMyCPU.py -v
-  - python Projetos/H-Assembler/scripts/testeAssemblyMyAssembler.py 
+  - python Projetos/H-Assembler/scripts/testeAssemblyMyAssembler.py
+  - python Projetos/I-VM/scripts/testeVM.py
