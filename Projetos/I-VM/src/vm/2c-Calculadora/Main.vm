@@ -1,0 +1,35 @@
+// ---------------------------------  
+// Rafael Corsi @ insper . edu . br
+//              2018a
+// ---------------------------------
+//
+// Projeto      : Projeto I-VM
+// File         : 2a-Calculadora
+//
+// Descritivo   : 
+//  Escreva um código em VM que realize a seguinte
+//  operação :
+//    (14+1)/(8-3)
+//
+//  O resultado deve ser salvo em temp 1
+//
+//  ****************************************************
+//  ** A ideia é deixar o Z01 resolver, você não deve **
+//  ** simplificar a equação                          **
+//  ****************************************************
+
+function Main.main 0
+    push constant 14
+    push constant 1
+    add
+    pop temp 0
+    
+    push constant 8
+    push constant 3
+    sub
+    pop temp 2
+    
+    push temp 0
+    push temp 2
+    call div 2
+    pop temp 1

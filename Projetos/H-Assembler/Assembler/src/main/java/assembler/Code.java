@@ -87,9 +87,9 @@ public class Code {
     }
 
     /**
-     * Retorna o cÃ³digo binÃ¡rio do mnemÃ´nico para realizar uma operaÃ§Ã£o de cÃ¡lculo.
-     * @param  mnemnonic vetor de mnemÃ´nicos "instruÃ§Ã£o" a ser analisada.
-     * @return Opcode (String de 7 bits) com cÃ³digo em linguagem de mÃ¡quina para a instruÃ§Ã£o.
+     * Retorna o código binário do mnemônico para realizar uma operação de cálculo.
+     * @param  mnemnonic vetor de mnemônicos "instrução" a ser analisada.
+     * @return Opcode (String de 8 bits) com código em linguagem de máquina para a instrução.
      */
     public static String comp(String[] mnemnonic) throws InvalidCompException{  	
     	//Jumps - Depende da segunda string, ou é %D ou %S
