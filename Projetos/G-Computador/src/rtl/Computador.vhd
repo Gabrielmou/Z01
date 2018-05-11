@@ -152,6 +152,7 @@ M3: MemoryIO
 		LED => LEDR
 	);
 
+  
   -- Resets
   RST_CPU <= RESET or (not LCD_INIT_OK) or (not PLL_LOCKED); -- REINICIA CPU
 	RST_MEM <= RESET or (not PLL_LOCKED);                      -- REINICIA MemoryIO
