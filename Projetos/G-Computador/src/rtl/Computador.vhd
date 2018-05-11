@@ -1,14 +1,3 @@
--------------------------------------------------------------------
--- Elementos de Sistemas
--------------------------------------------------------------------
--- Luciano Pereira
--------------------------------------------------------------------
--- Descricao :
--- Entidade central do desenvolvimento do computador
--------------------------------------------------------------------
--- Historico:
---  29/11/2016 : Criacao do projeto
--------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -54,9 +43,9 @@ ARCHITECTURE logic OF Computador IS
 
 	component ROM32K IS
 		port(
-			address	  : IN STD_LOGIC_VECTOR (14 DOWNTO 0);
+			address	    : IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 			clock	    : IN STD_LOGIC  := '1';
-			q		      : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+			q		    : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 		);
 	END component;
 
@@ -112,7 +101,7 @@ ARCHITECTURE logic OF Computador IS
 
   SIGNAL OUTPUT_RAM   : STD_LOGIC_VECTOR(15 downto 0);
   SIGNAL INSTRUCTION  : STD_LOGIC_VECTOR(15 downto 0);
-  SIGNAL PC			      : STD_LOGIC_VECTOR(14 downto 0);
+  SIGNAL PC			  : STD_LOGIC_VECTOR(14 downto 0);
 
 
 BEGIN
@@ -124,7 +113,44 @@ BEGIN
     outclk_1 => CLK_SLOW,
     locked   => PLL_LOCKED
      );
+M1: ROM32K
+	port map(
+		address => PC, 
+		clock => CLK_SLOW,
+		q <= INSTRUCTION);
+	)
+M2: CPU
+	port map(
+		clock => CLK_SLOW,
+		inM => LCD_D,
+		instruction => q,
+		reset => RESET,
+		outM => INPUT,
+		writeM => LOAD,
+		addressM => ADDRESS,
+		pcout => PC
+	);
 
+M3: MemoryIO
+	port map(
+		CLK_SLOW => '0',
+		CLK_FAST => CLK_FAST,
+		RST => '0'
+		ADDRESS => ADDRESS,
+		LOAD => LOAD,
+		INPUT => INPUT,
+		OUTPUT => OUTPUT_RAM,
+		LCD_CS_N => LCD_CS_N,
+		LCD_D => LCD_D,
+		LCD_RD_N => LCD_RD_N,
+		LCD_RESET_N => LCD_RESET_N,
+		LCD_RS => LCD_RS,
+		LCD_WR_N => LCD_WR_N,
+		LCD_ON =>LCD_ON,
+		LCD_INIT_OK =>LCD_INIT_OK,
+		SW => SW,
+		LED => LEDR
+	);
 
   -- Resets
   RST_CPU <= RESET or (not LCD_INIT_OK) or (not PLL_LOCKED); -- REINICIA CPU
