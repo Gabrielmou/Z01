@@ -45,7 +45,19 @@ public class Code {
 
         if(command.equals("add")) {
             commands.add(String.format("; %d - ADD", lineCode++));
-
+            //Reduzir o Stack Pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%S");
+            commands.add("decw %S");
+            commands.add("movw %S,(%A)");
+            //Mover valores para a operação na ULA
+            commands.add("movw (%A),%A");
+            commands.add("movw (%A),%D");
+            //Mover novamente o Stack Pointer quando a pilha estiver limpa 
+            commands.add("leaw $SP,%S");
+            commands.add("subw(%A),%1,%S");
+            commands.add("addw (%A),%D,%D");
+            commands.add("movw %D,(%A)");
         } else if (command.equals("sub")) {
             commands.add(String.format("; %d - SUB", lineCode++));
 
