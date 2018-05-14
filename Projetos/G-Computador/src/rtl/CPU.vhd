@@ -123,10 +123,11 @@ begin
 	M8: ALU port map(s_muxAM_ALUout,s_muxSDout,instruction(12),instruction(11),instruction(10),instruction(9),
 	instruction(8),instruction(7),s_zr,s_ng,s_ALUout);
 
-	M9: pc port map(clock,'1',s_loadPC,reset,s_regAout,pcout);
+	M9: pc port map(clock,'1',s_loadPC,reset,s_regAout,s_pcout);
 
-	addressM <= s_regAout;
+	addressM <= s_regAout(14 downto 0);
 	outM <= s_ALUout;
+	pcout <= s_pcout(14 downto 0);
 	--writeM <= loadM; --Ver se existe esse loadM!
 
 end architecture;
