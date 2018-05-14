@@ -45,21 +45,20 @@ public class Code {
 
         if(command.equals("add")) {
             commands.add(String.format("; %d - ADD", lineCode++));
-            //Reduzir o Stack Pointer
+            //Reduzir o Stack Pointer - Usar o registrador
             commands.add("leaw $SP,%A");
-            commands.add("movw (%A),%S");
-            commands.add("decw %S");
-            commands.add("movw %S,(%A)");
-            //Mover valores para a operação na ULA
             commands.add("movw (%A),%A");
-            commands.add("movw (%A),%D");
-            //Mover novamente o Stack Pointer quando a pilha estiver limpa 
-            commands.add("leaw $SP,%S");
-            commands.add("subw(%A),%1,%S");
-            commands.add("addw (%A),%D,%D");
-            commands.add("movw %D,(%A)");
+            commands.add("decw %A");
+            commands.add("movw %A,(%A)"); // 15
+            //Mover valores para a operação na ULA
+            commands.add("movw (%A),%D"); // 3 
+            commands.add("decw %A"); //14
+            commands.add("addw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+            
         } else if (command.equals("sub")) {
             commands.add(String.format("; %d - SUB", lineCode++));
+
 
         } else if (command.equals("neg")) {
             commands.add(String.format("; %d - NEG", lineCode++));
