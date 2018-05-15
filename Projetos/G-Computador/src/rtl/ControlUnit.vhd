@@ -2,6 +2,7 @@
 -- developed by Luciano Soares
 -- file: ControlUnit.vhd
 -- date: 4/4/2017
+-- GRUPO B
 
 -- Unidade que controla os componentes da CPU
 
@@ -22,29 +23,34 @@ entity ControlUnit is
 end entity;
 
 architecture arch of ControlUnit is
-signal Signal15 : std_logic;
+
+signal Sig : std_logic;
 
 begin
 
+Sig <= instruction(15);
+
 -- MUX
-    muxALUI_A <= not Signal15;
-    muxAM_ALU <= Signal15 and instruction(14);
-    muxSD_ALU <= Signal15 and not instruction(13);
--- Controle
-    zx <= Signal15 and instruction(12);
-    nx <= Signal15 and instruction(11);
-    zy <= Signal15 and instruction(10);
-    ny <= Signal15 and  instruction(9);
-    f  <= Signal15 and  instruction(8);
-    no <= Signal15 and instruction(7);
--- LOADS
-    loadA <= (Signal15 and instruction(6)) or (not instruction(15));   
-    loadD <= Signal15 and instruction(4);
-    loadS <= Signal15 and instruction(5);
-    loadM <= Signal15 and instruction(3);
-    loadPC <= ((instruction(2) and ng) or
+muxALUI_A <= not Sig;
+muxAM_ALU <= Sig and instruction(14);
+muxSD_ALU <= Sig and not instruction(13);
+
+-- Sinais de Controle
+zx <= Sig and instruction(12);
+nx <= Sig and instruction(11);
+zy <= Sig and instruction(10);
+ny <= Sig and instruction(9);
+f <= Sig and instruction(8);
+no <= Sig and instruction(7);
+
+-- Definindo instrucoes ao load
+loadA <= (Sig and instruction(6)) or (not instruction(15));
+loadS <= Sig and instruction(5);
+loadD <= Sig and instruction(4);
+loadM <= Sig and instruction(3);
+loadPC <= ((instruction(2) and ng) or
 		(instruction(1) and zr) or
 		(instruction(0) and (not zr) and (not ng))) and 
-		instruction(15); 
-
+		instruction(15);
+        
 end architecture;
