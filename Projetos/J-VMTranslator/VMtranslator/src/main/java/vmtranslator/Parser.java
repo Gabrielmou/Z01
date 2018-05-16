@@ -53,16 +53,18 @@ public class Parser {
     	Boolean advance = null;
     	if (line != null) {
     		advance = true;
+    		this.currentCommand = line;
 		}
     	else if (line == null) {
     		advance = false;
 		}
+    	
     	return advance;
    		
     }
 
     /**
-     * Retorna o comando "intrução" atual (sem o avanço)
+     * Retorna o comando "instrução" atual (sem o avanço)
      * @return a instrução atual para ser analilisada
      */
     public String command() {
@@ -77,7 +79,38 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
-		return null;
+    	String line[] = command.split(" ");
+    	command = line[0];
+    	if (command.startsWith("arithmetic")) {
+			return CommandType.C_ARITHMETIC;
+		}
+    	else if (command.startsWith("push")) {
+			return CommandType.C_PUSH;
+		}
+    	else if (command.startsWith("pop")) {
+			return CommandType.C_POP;
+		}
+    	else if (command.startsWith("label")) {
+			return CommandType.C_LABEL;
+		}
+    	else if (command.startsWith("goto")) {
+			return CommandType.C_GOTO;
+		}
+    	else if (command.startsWith("if")) {
+			return CommandType.C_IF;
+		}
+    	else if (command.startsWith("function")) {
+			return CommandType.C_FUNCTION;
+		}
+    	else if (command.startsWith("return")) {
+			return CommandType.C_RETURN;
+		}
+    	else if (command.startsWith("call")) {
+			return CommandType.C_CALL;
+		}
+    	else {
+    		return null;
+		}
     }
 
 
