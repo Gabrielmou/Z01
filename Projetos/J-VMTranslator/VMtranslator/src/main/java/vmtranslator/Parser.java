@@ -49,6 +49,16 @@ public class Parser {
      * @return Verdadeiro se ainda há instruções, Falso se as instruções terminaram.
      */
     public Boolean advance() throws IOException {
+    	String line = fileReader.readLine();
+    	Boolean advance = null;
+    	if (line != null) {
+    		advance = true;
+		}
+    	else if (line == null) {
+    		advance = false;
+		}
+    	return advance;
+   		
     }
 
     /**
@@ -67,6 +77,7 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
+		return null;
     }
 
 
@@ -78,6 +89,7 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String arg1(String command) {
+		return command;
     }
 
     /**
@@ -87,6 +99,7 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public Integer arg2(String command) {
+		return null;
     }
 
     // fecha o arquivo de leitura
