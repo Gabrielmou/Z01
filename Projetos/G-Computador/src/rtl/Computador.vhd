@@ -117,13 +117,13 @@ M1: ROM32K
 	port map(
 		address => PC, 
 		clock => CLK_SLOW,
-		q <= INSTRUCTION
+		q =>instruction
 	);
-M2: CPU
+MAIN_CPU: CPU
 	port map(
 		clock => CLK_SLOW,
 		inM => LCD_D,
-		instruction => q,
+		instruction => INSTRUCTION,
 		reset => RESET,
 		outM => INPUT,
 		writeM => LOAD,
@@ -135,7 +135,7 @@ M3: MemoryIO
 	port map(
 		CLK_SLOW => '0',
 		CLK_FAST => CLK_FAST,
-		RST => '0'
+		RST => '0',
 		ADDRESS => ADDRESS,
 		LOAD => LOAD,
 		INPUT => INPUT,
@@ -159,6 +159,6 @@ M3: MemoryIO
 	RESET   <= NOT RESET_N;
 
   -- LCD on
-  LCD_ON <= '1';
+  --LCD_ON <= '1';
 
 end logic;

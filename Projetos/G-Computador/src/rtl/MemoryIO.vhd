@@ -105,6 +105,8 @@ signal dataRam16: std_logic_vector(14 downto 0);
 signal DmuxRam,DmuxReg,DmuxScr: std_logic;
 signal outRam: std_logic_vector(15 downto 0);
 signal outMux: std_logic_vector(15 downto 0);
+signal Reg16Out:std_logic_vector(15 downto 0);
+signal Inmux16:std_logic_vector(15 downto 0);
 
 BEGIN
 	process (ADDRESS,selD,selM)
@@ -120,6 +122,8 @@ BEGIN
 			selM <= '0';
 	end if;
 	end process;
+
+Inmux16 <= "000000" & SW(9 downto 0);
 
 	M1: Screen 
 			 port map(
@@ -142,7 +146,7 @@ BEGIN
 			port map(
 			    ADDRESS(13 downto 0),
 			    CLK_FAST,
-			    INPUT(14 downto 0),
+			    INPUT(15 downto 0),
 			    DmuxRam,
 			    outRam
 			);
@@ -150,9 +154,9 @@ BEGIN
 	M3: Register16
 			port map(
 				CLK_SLOW,
-			    INPUT(9 downto 0),
+			    INPUT(15 downto 0),
 			    DmuxReg,
-			    LED
+			    Reg16Out
 			);
 	M4: DMux4Way 
 			port map(
@@ -160,16 +164,18 @@ BEGIN
 				selD,
 				DmuxRam,
 				DmuxReg,
-				DmuxScr,
-				'0'
+				DmuxScr
 			);      
 	M5: Mux16
 	        port map(
-               "000000" & SW,
+               Inmux16,
                outRam,
                selM,
-					OUTPUT
+	       OUTPUT
 
 
             );
+
+LED <= Reg16Out(9 downto 0);
+
 END ARCHITECTURE;

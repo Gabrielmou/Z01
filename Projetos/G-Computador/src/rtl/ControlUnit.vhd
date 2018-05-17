@@ -35,7 +35,8 @@ muxALUI_A <= not Sig;
 muxAM_ALU <= Sig and instruction(14);
 muxSD_ALU <= Sig and not instruction(13);
 
--- CONTROLES
+
+-- CONTROLE
 zx <= Sig and instruction(12);
 nx <= Sig and instruction(11);
 zy <= Sig and instruction(10);
@@ -43,7 +44,8 @@ ny <= Sig and instruction(9);
 f <= Sig and instruction(8);
 no <= Sig and instruction(7);
 
--- LOADS
+
+-- LOAD
 loadA <= (Sig and instruction(6)) or (not instruction(15));
 loadS <= Sig and instruction(5);
 loadD <= Sig and instruction(4);
