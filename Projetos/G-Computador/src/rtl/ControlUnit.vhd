@@ -25,6 +25,7 @@ end entity;
 architecture arch of ControlUnit is
 
 signal Sig : std_logic;
+
 begin
 
 Sig <= instruction(15);
@@ -34,6 +35,7 @@ muxALUI_A <= not Sig;
 muxAM_ALU <= Sig and instruction(14);
 muxSD_ALU <= Sig and not instruction(13);
 
+
 -- CONTROLE
 zx <= Sig and instruction(12);
 nx <= Sig and instruction(11);
@@ -41,6 +43,7 @@ zy <= Sig and instruction(10);
 ny <= Sig and instruction(9);
 f <= Sig and instruction(8);
 no <= Sig and instruction(7);
+
 
 -- LOAD
 loadA <= (Sig and instruction(6)) or (not instruction(15));
@@ -51,5 +54,5 @@ loadPC <= ((instruction(2) and ng) or
 		(instruction(1) and zr) or
 		(instruction(0) and (not zr) and (not ng))) and 
 		instruction(15);
-
+        
 end architecture;
