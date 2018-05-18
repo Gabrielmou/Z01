@@ -142,7 +142,7 @@ Inmux16 <= "000000" & SW(9 downto 0);
 				LCD_WR_N
 			);
 
-	M2: RAM16K 
+	RAM: RAM16K 
 			port map(
 			    ADDRESS(13 downto 0),
 			    CLK_FAST,
