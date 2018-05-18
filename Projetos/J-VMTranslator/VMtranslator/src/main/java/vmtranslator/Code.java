@@ -45,12 +45,43 @@ public class Code {
 
         if(command.equals("add")) {
             commands.add(String.format("; %d - ADD", lineCode++));
-
+            //Reduzir o Stack Pointer - Usar o registrador
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); // 15
+            //Mover valores para a operação na ULA
+            commands.add("movw (%A),%D"); // 3 
+            commands.add("decw %A"); //14
+            commands.add("addw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+            
         } else if (command.equals("sub")) {
             commands.add(String.format("; %d - SUB", lineCode++));
+            //Reduzir o Stack Pointer - Usar o registrador
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); 
+            //Mover valores para a operação na ULA
+            commands.add("movw (%A),%D");  
+            commands.add("decw %A"); 
+            commands.add("subw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+
 
         } else if (command.equals("neg")) {
             commands.add(String.format("; %d - NEG", lineCode++));
+             //Reduzir o Stack Pointer - Usar o registrador
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A),%A");
+             commands.add("decw %A");
+             commands.add("movw (%A),%S"); 
+             //Transformar o número em negativo
+             commands.add("decw %A");
+             commands.add("negw %S");
+             commands.add("movw %S,(%A");
+
 
         } else if (command.equals("eq")) {
             commands.add(String.format("; %d - EQ", lineCode++));
