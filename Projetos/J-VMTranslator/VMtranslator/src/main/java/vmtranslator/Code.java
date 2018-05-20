@@ -80,11 +80,20 @@ public class Code {
              //Transformar o número em negativo
              commands.add("decw %A");
              commands.add("negw %S");
-             commands.add("movw %S,(%A");
+             commands.add("movw %S,(%A)");
 
 
         } else if (command.equals("eq")) {
             commands.add(String.format("; %d - EQ", lineCode++));
+            //Reduzir o Stack Pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw %A,%S");
+            //Verificar se o número é igual
+            commands.add("decw %A");
+            commands.add("eq")
+
 
         } else if (command.equals("gt")) {
             commands.add(String.format("; %d - GT", lineCode++));
@@ -94,12 +103,43 @@ public class Code {
 
         } else if (command.equals("and")) {
             commands.add(String.format("; %d - AND", lineCode++));
+            //Reduzir o stack pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); 
+            //Operação AND
+            commands.add("movw (%A),%D");  
+            commands.add("decw %A"); 
+            commands.add("andw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
 
         } else if (command.equals("or")) {
             commands.add(String.format("; %d - OR", lineCode++));
+            //Reduzir o stack pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); 
+            //Operação OR
+            commands.add("movw (%A),%D");  
+            commands.add("decw %A"); 
+            commands.add("orw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+
 
         } else if (command.equals("not")) {
             commands.add(String.format("; %d - NOT", lineCode++));
+             //Reduzir o Stack Pointer - Usar o registrador
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A),%A");
+             commands.add("decw %A");
+             commands.add("movw (%A),%S"); 
+             //Transformar o número em negativo
+             commands.add("decw %A");
+             commands.add("notw %S");
+             commands.add("movw %S,(%A)");
+
 
         }
 
