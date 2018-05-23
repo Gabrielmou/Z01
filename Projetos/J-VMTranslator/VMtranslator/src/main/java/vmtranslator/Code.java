@@ -199,13 +199,11 @@ public class Code {
     public void writeGoto(String label) {
 
         List<String> commands = new ArrayList<String>();
-
-        String frase = "leaw $" + label + ",%A ; Carrega endereco do label";
-        commands.add(String.format(frase, lineCode++));
-
-        commands.add(String.format("jmp ; %d - Goto Incondicional", lineCode++));
-
-        commands.add(String.format("nop ; Necessario apos um jump", lineCode++));
+        commands.add("; %d - Goto Incondicional", lineCode++);
+        String frase = "leaw $" + label + ",%A";
+        commands.add(frase);
+        commands.add("jmp");
+        commands.add("nop");
 
         String[] stringArray = new String[ commands.size() ];
         commands.toArray( stringArray );
@@ -235,13 +233,41 @@ public class Code {
         List<String> commands = new ArrayList<String>();
         commands.add(String.format("; %d - chamada de funcao %s", lineCode++, functionName));
 
-        String frase = "leaw $" + functionName + ",%A ; Carrega endereco do label";
-        commands.add(String.format(frase, lineCode++));
-
-        commands.add(String.format("jmp ; %d - Goto Incondicional", lineCode++));
-
-        commands.add(String.format("nop ; Necessario apos um jump", lineCode++));
-
+        commands.add("leaw $SP,%A");
+        commands.add("movw (%A),%S");
+        commands.add("movw %S,(%A)");
+        commands.add("leaw $1,%A");
+        commands.add("addw %S,%A,%S");
+        
+        commands.add("leaw $LCL,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("leaw $1,%A");
+        commands.add("addw %S,%A,%S");
+        
+        commands.add("leaw $ARG,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("leaw $1,%A");
+        commands.add("addw %S,%A,%S");
+        
+        commands.add("leaw $THIS,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("leaw $1,%A");
+        commands.add("addw %S,%A,%S");
+        
+        commands.add("leaw $THAT,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("leaw $1,%A");
+        commands.add("addw %S,%A,%S"); //Verificar isso.
+        
+//        Chamar a funcao writeGoto
         String[] stringArray = new String[ commands.size() ];
         commands.toArray( stringArray );
         write(stringArray);
