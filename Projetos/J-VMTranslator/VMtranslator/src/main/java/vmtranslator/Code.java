@@ -259,7 +259,7 @@ public class Code {
         commands.add("movw (%A),%D");
         commands.add("movw %S,%A");
         commands.add("movw %D,(%A)");
-        commands.add("incw %S"); //Verificar isso.
+        commands.add("incw %S");
         
         commands.add("leaw $LCL,%A");
         commands.add("movw %S,(%A)");
