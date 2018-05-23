@@ -199,7 +199,17 @@ public class Code {
     public void writeGoto(String label) {
 
         List<String> commands = new ArrayList<String>();
-        commands.add(String.format("; %d - Goto Incondicional", lineCode++));
+
+        String frase = "leaw $" + label + ",%A ; Carrega endereco do label";
+        commands.add(String.format(frase, lineCode++));
+
+        commands.add(String.format("jmp ; %d - Goto Incondicional", lineCode++));
+
+        commands.add(String.format("nop ; Necessario apos um jump", lineCode++));
+
+        String[] stringArray = new String[ commands.size() ];
+        commands.toArray( stringArray );
+        write(stringArray);
 
     }
 
@@ -225,6 +235,16 @@ public class Code {
         List<String> commands = new ArrayList<String>();
         commands.add(String.format("; %d - chamada de funcao %s", lineCode++, functionName));
 
+        String frase = "leaw $" + functionName + ",%A ; Carrega endereco do label";
+        commands.add(String.format(frase, lineCode++));
+
+        commands.add(String.format("jmp ; %d - Goto Incondicional", lineCode++));
+
+        commands.add(String.format("nop ; Necessario apos um jump", lineCode++));
+
+        String[] stringArray = new String[ commands.size() ];
+        commands.toArray( stringArray );
+        write(stringArray);
     }
 
     /**
