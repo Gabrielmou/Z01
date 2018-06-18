@@ -37,10 +37,13 @@ public class Code {
      */
     public void writeArithmetic(String command) {
 
+    
         if ( command.equals("")) {
+            System.out.println("ERRO ------------------");
             Error.error("Instrução invalida");
         }
-
+        
+        
         List<String> commands = new ArrayList<String>();
 
         if(command.equals("add")) {
@@ -51,55 +54,188 @@ public class Code {
             commands.add("decw %A");
             commands.add("movw (%A),%S"); // 15
             //Mover valores para a operação na ULA
-            commands.add("movw (%A),%D"); // 3 
-            commands.add("decw %A"); //14
-            commands.add("addw %D,(%A),%S");
-            commands.add("movw %S,(%A)");
-            
+            commands.add("decw %A");  // A = 14
+            commands.add("addw %S,(%A),%S"); // S = + 
+            commands.add("movw %S,(%A)"); //s = ram[14] 
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A), %D");
+            commands.add("decw %D"); 
+            commands.add("leaw $SP,%A");
+            commands.add("movw %D,(%A)"); 
+
+
         } else if (command.equals("sub")) {
             commands.add(String.format("; %d - SUB", lineCode++));
             //Reduzir o Stack Pointer - Usar o registrador
-            commands.add("leaw $SP,%A");
-            commands.add("movw (%A),%A");
-            commands.add("decw %A");
-            commands.add("movw (%A),%S"); 
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 16
+            commands.add("decw %A"); // A = 15
+            commands.add("movw (%A),%S"); // S = 3
             //Mover valores para a operação na ULA
-            commands.add("movw (%A),%D");  
-            commands.add("decw %A"); 
-            commands.add("subw %D,(%A),%S");
+            commands.add("decw %A"); // A = 14 
+            commands.add("subw (%A),%S,%S"); // S = S - ram[]
             commands.add("movw %S,(%A)");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A), %D");
+            commands.add("decw %D"); 
+            commands.add("leaw $SP,%A");
+            commands.add("movw %D,(%A)"); 
 
 
         } else if (command.equals("neg")) {
+            System.out.println("entrou ! -------------------- \n");
+
+
             commands.add(String.format("; %d - NEG", lineCode++));
              //Reduzir o Stack Pointer - Usar o registrador
              commands.add("leaw $SP,%A");
-             commands.add("movw (%A),%A");
-             commands.add("decw %A");
-             commands.add("movw (%A),%S"); 
+             commands.add("movw (%A),%A"); // A = 16 
+             commands.add("decw %A"); // A = 15 
+             commands.add("movw (%A),%S"); // S = ram[15]
              //Transformar o número em negativo
-             commands.add("decw %A");
              commands.add("negw %S");
-             commands.add("movw %S,(%A)");
+             commands.add("movw %S,(%A)"); // Snegado = ram[15]
+            
 
 
         } else if (command.equals("eq")) {
             commands.add(String.format("; %d - EQ", lineCode++));
-            //Reduzir o Stack Pointer
+            String P2  = getRandomString();
+            String FIM = getRandomString();
+            System.out.println(P2 +" "+FIM);
+
+            commands.add(String.format("; %d - GT", lineCode++));
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("je %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
             commands.add("leaw $SP,%A");
             commands.add("movw (%A),%A");
             commands.add("decw %A");
-            commands.add("movw %A,%S");
-            //Verificar se o número é igual
             commands.add("decw %A");
-            commands.add("eq")
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
 
 
         } else if (command.equals("gt")) {
-            commands.add(String.format("; %d - GT", lineCode++));
 
+            String P2  = getRandomString();
+            String FIM = getRandomString();
+            
+           
+            System.out.println(P2 +" "+FIM);
+
+            commands.add(String.format("; %d - GT", lineCode++));
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("jg %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("decw %A");
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
+            
+        
         } else if (command.equals("lt")) {
-            commands.add(String.format("; %d - LT", lineCode++));
+
+            String P2  = getRandomString();
+            String FIM = getRandomString();            
+           
+            System.out.println(P2 +" "+FIM);
+
+            commands.add(String.format("; %d - GT", lineCode++));
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("jg %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("decw %A");
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("and")) {
             commands.add(String.format("; %d - AND", lineCode++));
@@ -113,6 +249,13 @@ public class Code {
             commands.add("decw %A"); 
             commands.add("andw %D,(%A),%S");
             commands.add("movw %S,(%A)");
+            //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D"); 
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("or")) {
             commands.add(String.format("; %d - OR", lineCode++));
@@ -126,6 +269,13 @@ public class Code {
             commands.add("decw %A"); 
             commands.add("orw %D,(%A),%S");
             commands.add("movw %S,(%A)");
+            //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D"); 
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
 
         } else if (command.equals("not")) {
