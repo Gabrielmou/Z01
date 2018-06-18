@@ -133,7 +133,7 @@ public class Code {
 				commands.add("movw (%A), %S");
 				commands.add("leaw $LCL, %A");
 				commands.add("movw (%A), %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $"+ index+ ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 				
@@ -148,7 +148,7 @@ public class Code {
 				commands.add("movw (%A), %S");
 				commands.add("leaw $ARG, %A");
 				commands.add("movw (%A), %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $"+index+ ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 
@@ -162,7 +162,7 @@ public class Code {
 				commands.add("movw (%A), %S");
 				commands.add("leaw $THIS, %A");
 				commands.add("movw (%A), %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $"+ index+ ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 
@@ -176,7 +176,7 @@ public class Code {
 				commands.add("movw (%A), %S");
 				commands.add("leaw $THAT, %A");
 				commands.add("movw (%A), %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $"+ index + ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 
@@ -188,9 +188,9 @@ public class Code {
     			commands.add("movw %S, (%A)");
     			commands.add("movw %S, %A");
 				commands.add("movw (%A), %S");
-				commands.add("leaw $", segment, "%A");
+				commands.add("leaw $16, %A");
 				commands.add("movw %A, %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $" +index + ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 				
@@ -202,9 +202,9 @@ public class Code {
     			commands.add("movw %S, (%A)");
     			commands.add("movw %S, %A");
 				commands.add("movw (%A), %S");
-				commands.add("leaw $", segment, "%A");
+				commands.add("leaw $5, %A");
 				commands.add("movw %A, %D");
-				commands.add("leaw $", Integer.toString(index), ",%A");
+				commands.add("leaw $"+ index+ ",%A");
             	commands.add("addw %A, %D, %A");
 				commands.add("movw %S, (%A)");
 				
@@ -235,7 +235,7 @@ public class Code {
             commands.add(String.format("; %d - PUSH %s %d", lineCode++ ,segment, index));
 
             if (segment.equals("constant")) { 
-            	commands.add("leaw $", Integer.toString(index), ",%A"); //ATUALIZADO
+            	commands.add("leaw $" + index + ",%A"); //ATUALIZADO
             	commands.add("movw %A, %S");
             	commands.add("leaw $SP, %A");
             	commands.add("movw (%A), %D");
@@ -249,7 +249,7 @@ public class Code {
             } else if (segment.equals("local")) {
             	commands.add("leaw $LCL, %A"); 
             	commands.add("movw (%A), %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $" +index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
@@ -263,7 +263,7 @@ public class Code {
             } else if (segment.equals("argument")) {
             	commands.add("leaw $ARG, %A"); 
             	commands.add("movw (%A), %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $" +index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
@@ -277,7 +277,7 @@ public class Code {
             } else if (segment.equals("this")) {
                	commands.add("leaw $THIS, %A"); 
             	commands.add("movw (%A), %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $"+index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
@@ -292,7 +292,7 @@ public class Code {
             } else if (segment.equals("that")) {
                	commands.add("leaw $THAT, %A"); 
             	commands.add("movw (%A), %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $"+index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
@@ -304,9 +304,9 @@ public class Code {
             	commands.add("movw %D, (%A)");
 
             } else if (segment.equals("static")) {
-               	commands.add("leaw $", segment, ",%A"); 
+               	commands.add("leaw $16, %A"); 
             	commands.add("movw %A, %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $"+ index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
@@ -318,9 +318,9 @@ public class Code {
             	commands.add("movw %D, (%A)");
 				
             } else if (segment.equals("temp")) {
-               	commands.add("leaw $", segment, ",%A"); 
+               	commands.add("leaw $5, %A"); 
             	commands.add("movw %A, %S");
-            	commands.add("leaw $", Integer.toString(index), ",%A");
+            	commands.add("leaw $"+index+ ",%A");
             	commands.add("addw %A, %S, %A");
             	commands.add("movw (%A), %S");
             	commands.add("leaw $SP, %A");
