@@ -12,6 +12,8 @@ package vmtranslator;
 import java.util.*;
 import java.io.*;
 import java.nio.file.*;
+import java.security.SecureRandom;
+import java.math.BigInteger;
 
 /**
  * Traduz da linguagem vm para códigos assembly.
@@ -103,8 +105,6 @@ public class Code {
             String P2  = getRandomString();
             String FIM = getRandomString();
             System.out.println(P2 +" "+FIM);
-
-            commands.add(String.format("; %d - GT", lineCode++));
             commands.add("leaw $SP,%A"); 
             commands.add("movw (%A),%A"); // A = 256
             commands.add("decw %A"); // A = 255
@@ -197,8 +197,9 @@ public class Code {
             String FIM = getRandomString();            
            
             System.out.println(P2 +" "+FIM);
-
+            commands.add(String.format("; %d - LT", lineCode++));
             commands.add(String.format("; %d - GT", lineCode++));
+
             commands.add("leaw $SP,%A"); 
             commands.add("movw (%A),%A"); // A = 256
             commands.add("decw %A"); // A = 255
@@ -207,7 +208,7 @@ public class Code {
             commands.add("movw (%A),%A"); // A = 2 
             commands.add("subw %A, %S, %D"); // D = 2 -3
             commands.add("leaw $"+P2+",%A");
-            commands.add("jg %D");
+            commands.add("jl %D");
             commands.add("nop");
             //CASE FALSE
             commands.add("leaw $0,%A");
@@ -299,6 +300,14 @@ public class Code {
 
     }
 
+    public String getRandomString(){
+        SecureRandom secureRandom = new SecureRandom();
+        byte[] token = new byte[10];
+        secureRandom.nextBytes(token);
+      	String randomString = new BigInteger(1, token).toString(16); 
+        return  "lbl" + randomString;//hex encoding
+    }
+    
     /**
      * Grava no arquivo de saida as instruções em Assembly para executar o comando de Push ou Pop.
      * @param  command comando de push ou pop a ser analisado.
