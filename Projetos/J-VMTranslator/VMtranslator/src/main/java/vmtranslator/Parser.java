@@ -28,12 +28,12 @@ public class Parser {
         C_ARITHMETIC,      // comandos aritméticos
         C_PUSH,            // comandos de push
         C_POP,             // comandos de pop
-        C_LABEL,           // label
-        C_GOTO,            // comando goto
-        C_IF,              // comando if-goto
-        C_FUNCTION,        // declaracao de funcao
-        C_RETURN,          // retorno de funcao
-        C_CALL             // chamada de funcao
+        C_LABEL,           //
+        C_GOTO,            //
+        C_IF,              //
+        C_FUNCTION,        //
+        C_RETURN,          //
+        C_CALL             //
     }
 
     /**
@@ -51,18 +51,16 @@ public class Parser {
      * @return Verdadeiro se ainda há instruções, Falso se as instruções terminaram.
      */
     public Boolean advance() throws IOException {
-    	String line = fileReader.readLine();
-    	Boolean advance = null;
-    	if (line != null) {
-    		advance = true;
-    		this.currentCommand = line;
-		}
-    	else if (line == null) {
-    		advance = false;
-		}
-    	
-    	return advance;
-   		
+
+        while(true){
+            String currentLine = fileReader.readLine();
+            if (currentLine == null)
+                return false;  // caso não haja mais comandos
+            currentCommand = currentLine.replaceAll("//.*$", "").trim();
+            if (currentCommand.equals(""))
+                continue;
+            return true;   // caso um comando seja encontrado
+        }
     }
 
     /**
@@ -81,38 +79,26 @@ public class Parser {
      * @return o tipo da instrução.
      */
     public CommandType commandType(String command) {
-    	String line[] = command.split(" ");
-    	command = line[0];
-    	if (command.startsWith("push")) {
-			return CommandType.C_PUSH;
-		}
-    	else if (command.startsWith("pop")) {
-			return CommandType.C_POP;
-		}
-    	else if (command.startsWith("label")) {
-			return CommandType.C_LABEL;
-		}
-    	else if (command.startsWith("goto")) {
-			return CommandType.C_GOTO;
-		}
-    	else if (command.startsWith("if")) {
-			return CommandType.C_IF;
-		}
-    	else if (command.startsWith("function")) {
-			return CommandType.C_FUNCTION;
-		}
-    	else if (command.startsWith("return")) {
-			return CommandType.C_RETURN;
-		}
-    	else if (command.startsWith("call")) {
-			return CommandType.C_CALL;
-		}
-    	else {
-			return CommandType.C_ARITHMETIC;
-		}
-    	
-		
-    }
+        if (command.startsWith("push")) {
+            return CommandType.C_PUSH;  // comandos de PUSH
+        } else if (command.startsWith("pop")) {
+            return CommandType.C_POP;  //  comandos de POP
+        } else if (command.startsWith("label")) {
+            return CommandType.C_LABEL;  //  comandos de label
+        } else if (command.startsWith("goto")) {
+            return CommandType.C_GOTO;  //  comandos de goto
+        } else if (command.startsWith("if-goto")) {
+            return CommandType.C_IF;  //  comandos de if-goto
+        } else if (command.startsWith("function")) {
+            return CommandType.C_FUNCTION;  //  comandos de function
+        } else if (command.startsWith("return")) {
+            return CommandType.C_RETURN;  //  comandos de return
+        } else if (command.startsWith("call")) {
+            return CommandType.C_CALL;  //  comandos de call
+        } else {
+            return CommandType.C_ARITHMETIC;  // C_ARITHMETIC for add, sub, etc...
+        }
+}
 
 
     /**
@@ -123,31 +109,14 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String arg1(String command) {
-    	String arg1 = null;
-    	try{
-    		
-        	CommandType type = commandType(command);
-        	if (type != CommandType.C_RETURN) {
-        		String line[] = command.split(" ");
-    			if (type == CommandType.C_ARITHMETIC) {
-    				arg1 = line[0];
-    				//System.out.println(arg1);
-//    				return arg1;
-    			}
-    			else {
-    				arg1 = line[1];
-    				//System.out.println(arg1);
-//    				return arg1;
-    			}
-    		}    		
-    	}
-    	catch (Exception e) {
-    		System.out.println(e);
-    		JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
 
-    	}
-		return arg1;
-    }
+        if(commandType(command) == Parser.CommandType.C_ARITHMETIC) {
+            return(command);
+        } else {
+            String[] array = command.split(" ");
+            return array[1].replaceAll("\\s+","");
+        }
+}
 
     /**
      * Retorna o segundo argumento de um comando push ou pop passada no argumento.
@@ -156,20 +125,10 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public Integer arg2(String command) {
-    	Integer arg2_int = null;
-    	try {
-        	CommandType type = commandType(command);
-			if (type == CommandType.C_PUSH || type == CommandType.C_POP || type == CommandType.C_FUNCTION || type == CommandType.C_CALL) {
-        		String line[] = command.split(" ");
-        		String arg2 = line[2];
-        		arg2_int = Integer.parseInt(arg2);
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-    		JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
-		}
-		return arg2_int;
-    }
+
+        String[] array = command.split(" ");
+        return Integer.valueOf(array[2]);
+}
 
     // fecha o arquivo de leitura
     public void close() throws IOException {

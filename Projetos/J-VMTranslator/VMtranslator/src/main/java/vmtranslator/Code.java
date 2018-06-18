@@ -12,6 +12,8 @@ package vmtranslator;
 import java.util.*;
 import java.io.*;
 import java.nio.file.*;
+import java.security.SecureRandom;
+import java.math.BigInteger;
 
 /**
  * Traduz da linguagem vm para códigos assembly.
@@ -37,38 +39,258 @@ public class Code {
      */
     public void writeArithmetic(String command) {
 
+    
         if ( command.equals("")) {
+            System.out.println("ERRO ------------------");
             Error.error("Instrução invalida");
         }
-
+        
+        
         List<String> commands = new ArrayList<String>();
 
         if(command.equals("add")) {
             commands.add(String.format("; %d - ADD", lineCode++));
+            //Reduzir o Stack Pointer - Usar o registrador
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); // 15
+            //Mover valores para a operação na ULA
+            commands.add("decw %A");  // A = 14
+            commands.add("addw %S,(%A),%S"); // S = + 
+            commands.add("movw %S,(%A)"); //s = ram[14] 
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A), %D");
+            commands.add("decw %D"); 
+            commands.add("leaw $SP,%A");
+            commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("sub")) {
             commands.add(String.format("; %d - SUB", lineCode++));
+            //Reduzir o Stack Pointer - Usar o registrador
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 16
+            commands.add("decw %A"); // A = 15
+            commands.add("movw (%A),%S"); // S = 3
+            //Mover valores para a operação na ULA
+            commands.add("decw %A"); // A = 14 
+            commands.add("subw (%A),%S,%S"); // S = S - ram[]
+            commands.add("movw %S,(%A)");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A), %D");
+            commands.add("decw %D"); 
+            commands.add("leaw $SP,%A");
+            commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("neg")) {
+            System.out.println("entrou ! -------------------- \n");
+
+
             commands.add(String.format("; %d - NEG", lineCode++));
+             //Reduzir o Stack Pointer - Usar o registrador
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A),%A"); // A = 16 
+             commands.add("decw %A"); // A = 15 
+             commands.add("movw (%A),%S"); // S = ram[15]
+             //Transformar o número em negativo
+             commands.add("negw %S");
+             commands.add("movw %S,(%A)"); // Snegado = ram[15]
+            
+
 
         } else if (command.equals("eq")) {
             commands.add(String.format("; %d - EQ", lineCode++));
+            String P2  = getRandomString();
+            String FIM = getRandomString();
+            System.out.println(P2 +" "+FIM);
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("je %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("decw %A");
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("gt")) {
+
+            String P2  = getRandomString();
+            String FIM = getRandomString();
+            
+           
+            System.out.println(P2 +" "+FIM);
+
+            commands.add(String.format("; %d - GT", lineCode++));
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("jg %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("decw %A");
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
+            
+        
+        } else if (command.equals("lt")) {
+
+            String P2  = getRandomString();
+            String FIM = getRandomString();            
+           
+            System.out.println(P2 +" "+FIM);
+            commands.add(String.format("; %d - LT", lineCode++));
             commands.add(String.format("; %d - GT", lineCode++));
 
-        } else if (command.equals("lt")) {
-            commands.add(String.format("; %d - LT", lineCode++));
+            commands.add("leaw $SP,%A"); 
+            commands.add("movw (%A),%A"); // A = 256
+            commands.add("decw %A"); // A = 255
+            commands.add("movw (%A),%S"); // S = 3
+            commands.add("decw %A"); // A = 254 
+            commands.add("movw (%A),%A"); // A = 2 
+            commands.add("subw %A, %S, %D"); // D = 2 -3
+            commands.add("leaw $"+P2+",%A");
+            commands.add("jl %D");
+            commands.add("nop");
+            //CASE FALSE
+            commands.add("leaw $0,%A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop"); 
+             //CASE TRUE 
+            commands.add(P2+":"); 
+            commands.add("leaw $1,%A");
+            commands.add("negw %A");
+            commands.add("movw %A,%D");
+            commands.add("leaw $"+FIM+",%A");
+            commands.add("jmp");
+            commands.add("nop");
+            commands.add(FIM+":");
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("decw %A");
+            commands.add("movw %D,(%A)");
+             //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D");
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("and")) {
             commands.add(String.format("; %d - AND", lineCode++));
+            //Reduzir o stack pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); 
+            //Operação AND
+            commands.add("movw (%A),%D");  
+            commands.add("decw %A"); 
+            commands.add("andw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+            //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D"); 
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
 
         } else if (command.equals("or")) {
             commands.add(String.format("; %d - OR", lineCode++));
+            //Reduzir o stack pointer
+            commands.add("leaw $SP,%A");
+            commands.add("movw (%A),%A");
+            commands.add("decw %A");
+            commands.add("movw (%A),%S"); 
+            //Operação OR
+            commands.add("movw (%A),%D");  
+            commands.add("decw %A"); 
+            commands.add("orw %D,(%A),%S");
+            commands.add("movw %S,(%A)");
+            //Reduzir SP
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A), %D");
+             commands.add("decw %D"); 
+             commands.add("leaw $SP,%A");
+             commands.add("movw %D,(%A)"); 
+
+
 
         } else if (command.equals("not")) {
             commands.add(String.format("; %d - NOT", lineCode++));
+             //Reduzir o Stack Pointer - Usar o registrador
+             commands.add("leaw $SP,%A");
+             commands.add("movw (%A),%A");
+             commands.add("decw %A");
+             commands.add("movw (%A),%S"); 
+             //Transformar o número em negativo
+             commands.add("decw %A");
+             commands.add("notw %S");
+             commands.add("movw %S,(%A)");
+
 
         }
 
@@ -78,6 +300,14 @@ public class Code {
 
     }
 
+    public String getRandomString(){
+        SecureRandom secureRandom = new SecureRandom();
+        byte[] token = new byte[10];
+        secureRandom.nextBytes(token);
+      	String randomString = new BigInteger(1, token).toString(16); 
+        return  "lbl" + randomString;//hex encoding
+    }
+    
     /**
      * Grava no arquivo de saida as instruções em Assembly para executar o comando de Push ou Pop.
      * @param  command comando de push ou pop a ser analisado.
