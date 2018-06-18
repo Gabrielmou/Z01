@@ -429,7 +429,14 @@ public class Code {
     public void writeGoto(String label) {
 
         List<String> commands = new ArrayList<String>();
-        commands.add(String.format("; %d - Goto Incondicional", lineCode++));
+        String frase = "leaw $" + label + ",%A";
+        commands.add(frase);
+        commands.add("jmp");
+        commands.add("nop");
+
+        String[] stringArray = new String[ commands.size() ];
+        commands.toArray( stringArray );
+        write(stringArray);
 
     }
 
@@ -455,6 +462,46 @@ public class Code {
         List<String> commands = new ArrayList<String>();
         commands.add(String.format("; %d - chamada de funcao %s", lineCode++, functionName));
 
+        commands.add("leaw $SP,%A");
+        commands.add("movw (%A),%S");
+        commands.add("movw %S,(%A)");
+        commands.add("incw %S");
+        
+        commands.add("leaw $LCL,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("incw %S");
+        
+        commands.add("leaw $ARG,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("incw %S");
+        
+        commands.add("leaw $THIS,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("incw %S");
+        
+        commands.add("leaw $THAT,%A");
+        commands.add("movw (%A),%D");
+        commands.add("movw %S,%A");
+        commands.add("movw %D,(%A)");
+        commands.add("incw %S");
+        
+        commands.add("leaw $LCL,%A");
+        commands.add("movw %S,(%A)");
+        commands.add(String.format("leaw $%d,%A",numArgs));
+        commands.add("addw %S,%A,%S");
+        commands.add("leaw $SP,%A");
+        commands.add("movw %S,(%A)");
+        writeGoto(functionName);
+        
+        String[] stringArray = new String[ commands.size() ];
+        commands.toArray( stringArray );
+        write(stringArray);
     }
 
     /**

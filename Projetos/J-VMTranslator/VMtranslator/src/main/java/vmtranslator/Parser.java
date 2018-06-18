@@ -11,6 +11,8 @@ package vmtranslator;
 
 import java.io.*;
 
+import javax.swing.JOptionPane;
+
 /**
  * Encapsula o código de leitura. Carrega as instruções na linguagem de máquina virtual a pilha,
  * analisa, e oferece acesso aos comandos.
@@ -49,6 +51,7 @@ public class Parser {
      * @return Verdadeiro se ainda há instruções, Falso se as instruções terminaram.
      */
     public Boolean advance() throws IOException {
+
         while(true){
             String currentLine = fileReader.readLine();
             if (currentLine == null)
@@ -61,7 +64,7 @@ public class Parser {
     }
 
     /**
-     * Retorna o comando "intrução" atual (sem o avanço)
+     * Retorna o comando "instrução" atual (sem o avanço)
      * @return a instrução atual para ser analilisada
      */
     public String command() {
@@ -95,7 +98,7 @@ public class Parser {
         } else {
             return CommandType.C_ARITHMETIC;  // C_ARITHMETIC for add, sub, etc...
         }
-    }
+}
 
 
     /**
@@ -106,13 +109,14 @@ public class Parser {
      * @return somente o símbolo ou o valor número da instrução.
      */
     public String arg1(String command) {
+
         if(commandType(command) == Parser.CommandType.C_ARITHMETIC) {
             return(command);
         } else {
             String[] array = command.split(" ");
             return array[1].replaceAll("\\s+","");
         }
-    }
+}
 
     /**
      * Retorna o segundo argumento de um comando push ou pop passada no argumento.
@@ -121,9 +125,10 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public Integer arg2(String command) {
+
         String[] array = command.split(" ");
         return Integer.valueOf(array[2]);
-    }
+}
 
     // fecha o arquivo de leitura
     public void close() throws IOException {
